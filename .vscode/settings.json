@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\dgs20\\Downloads\\jogamp-all-platforms\\jogamp-all-platforms\\jar\\gluegen-rt.jar",
+        "c:\\Users\\dgs20\\Downloads\\jogamp-all-platforms\\jogamp-all-platforms\\jar\\gluegen-rt-natives-windows-amd64.jar",
+        "c:\\Users\\dgs20\\Downloads\\jogamp-all-platforms\\jogamp-all-platforms\\jar\\jogl-all.jar",
+        "c:\\Users\\dgs20\\Downloads\\jogamp-all-platforms\\jogamp-all-platforms\\jar\\jogl-all-natives-windows-amd64.jar"
+    ]
+}
