@@ -10,6 +10,7 @@
         "libs/gluegen-rt.jar",
         "libs/gluegen-rt-natives-windows-amd64.jar",
         "libs/jogl-all.jar",
-        "libs/jogl-all-mobile-natives-windows-amd64.jar"
+        "libs/jogl-all-mobile-natives-windows-amd64.jar",
+        "libs/jmf.jar"
     ]
 }
