@@ -6,6 +6,10 @@
         "c:\\Users\\dgs20\\Downloads\\jogamp-all-platforms\\jogamp-all-platforms\\jar\\gluegen-rt.jar",
         "c:\\Users\\dgs20\\Downloads\\jogamp-all-platforms\\jogamp-all-platforms\\jar\\gluegen-rt-natives-windows-amd64.jar",
         "c:\\Users\\dgs20\\Downloads\\jogamp-all-platforms\\jogamp-all-platforms\\jar\\jogl-all.jar",
-        "c:\\Users\\dgs20\\Downloads\\jogamp-all-platforms\\jogamp-all-platforms\\jar\\jogl-all-natives-windows-amd64.jar"
+        "c:\\Users\\dgs20\\Downloads\\jogamp-all-platforms\\jogamp-all-platforms\\jar\\jogl-all-natives-windows-amd64.jar",
+        "libs/gluegen-rt.jar",
+        "libs/gluegen-rt-natives-windows-amd64.jar",
+        "libs/jogl-all.jar",
+        "libs/jogl-all-mobile-natives-windows-amd64.jar"
     ]
 }
