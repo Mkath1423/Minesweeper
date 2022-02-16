@@ -4,7 +4,10 @@ import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 
+import minesweeper.util.*;
+
 public class EventListener implements GLEventListener{
+    public Quad s1;
 
     @Override
     public void display(GLAutoDrawable drawable) {
@@ -13,16 +16,9 @@ public class EventListener implements GLEventListener{
         gl.glClearColor(0.5f, 1, 1, 1);
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
 
-        gl.glColor3f(1, 0.4f, 0);
-
-        gl.glBegin(GL2.GL_QUADS);
-
-        gl.glVertex2f(100, 100);
-        gl.glVertex2f(50, 100);
-        gl.glVertex2f(50, 50);
-        gl.glVertex2f(100, 50);
-
-        gl.glEnd();
+        
+        s1.shift(1, 0);
+        s1.draw(gl);
     }
 
     @Override
@@ -34,6 +30,8 @@ public class EventListener implements GLEventListener{
     @Override
     public void init(GLAutoDrawable drawable){
         GL2 gl = drawable.getGL().getGL2();
+
+        s1 = Quad.Square(0f, 150f, 20f, Color.RandomColor());
 
         gl.glClearColor(0.5f, 1, 1, 1);
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);

@@ -26,7 +26,7 @@ public class Renderer
 
         
 
-        FPSAnimator animator = new FPSAnimator(window, 165);
+        FPSAnimator animator = new FPSAnimator(window, 130);
         animator.start();
    
         window.setVisible(true);
