@@ -9,4 +9,9 @@ public final class Constants {
         public static Color boarderColor = new Color(0.3f, 0.3f, 0.3f, 1f);
         public static Color innerColor   = new Color(0.7f, 0.7f, 0.7f, 1f);
     }
+
+    public static final class kGame{
+        public static int xSize = 15;
+        public static int ySize = 10;
+    }
 }
