@@ -1,12 +1,13 @@
-package minesweeper.util;
+package engine.drawables;
 
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 
-import minesweeper.util.Point;
-import minesweeper.util.Color;
+import engine.rendering.Drawer;
+import engine.utils.Color;
+import engine.utils.Point;
 
-public class Quad {
+public class Quad implements Drawable{
     public Point left_top;
     public Point right_top;
     public Point left_bottom;
@@ -56,6 +57,13 @@ public class Quad {
         right_bottom.y += y;
     }
 
+    @Override
+    public void init(Drawer d) {
+        index = d.Frame(layer).add(this);
+        
+    }
+
+    @Override
     public void draw(GL2 gl) {
 
         gl.glBegin(GL2.GL_QUADS);
@@ -69,4 +77,18 @@ public class Quad {
 
         gl.glEnd();
     }
+
+
+    @Override
+    public void dispose(Drawer d) {
+        d.Frame(layer).remove(index);
+    }
+
+    @Override
+    public void reshape(int x, int y) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    
 }

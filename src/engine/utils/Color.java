@@ -1,4 +1,4 @@
-package minesweeper.util;
+package engine.utils;
 
 public class Color {
     public final float r;

@@ -18,20 +18,20 @@ public class Tile {
     public boolean isBomb;
     public int count;
 
-    public Tile(int _x, int _y, float _l){
-        x = _x;
-        y = _x;
+    public Tile(int _x, int _y, int _l){
+        x = _x*_l;
+        y = _y*_l;
         l = _l;
 
         isHidden = true;
         isBomb = false;
         count = 0;
 
-        outline = Quad.Square(_x, _y, _l, kTile.boarderColor);
-        inner   = Quad.Square(_x + (l * kTile.boarderPercent / 2), 
-                              _y + (l * kTile.boarderPercent / 2), 
-                              _l * kTile.boarderPercent, 
-                              kTile.boarderColor);
+        outline = Quad.Square(x, y, _l, kTile.boarderColor);
+        inner   = Quad.Square(x + (l * kTile.boarderPercent / 2), 
+                              y + (l * kTile.boarderPercent / 2), 
+                              l * kTile.boarderPercent, 
+                              kTile.innerColor);
     }
 
     public void draw(GL2 gl){
