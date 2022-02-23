@@ -3,6 +3,8 @@ package engine.drawables;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 
+import engine.exeptions.DrawableNotInitialized;
+import engine.exeptions.LayerDoesNotExist;
 import engine.rendering.Drawer;
 import engine.utils.Color;
 import engine.utils.Point;
@@ -14,6 +16,9 @@ public class Quad implements Drawable{
     public Point right_bottom;
 
     public Color color;
+
+    public int index = -1;
+    public int layer = 0;
 
     public Quad(Point lb, Point rb, Point rt, Point lt){
         left_top = lt;
@@ -59,7 +64,13 @@ public class Quad implements Drawable{
 
     @Override
     public void init(Drawer d) {
-        index = d.Frame(layer).add(this);
+        try{
+
+            index = d.Frame(layer).add(this);
+        }
+        catch(LayerDoesNotExist | DrawableNotInitialized e){
+            System.out.printf("quad cannot be drawn to layer: %s \n", layer);
+        }
         
     }
 
@@ -81,12 +92,17 @@ public class Quad implements Drawable{
 
     @Override
     public void dispose(Drawer d) {
-        d.Frame(layer).remove(index);
+        try{
+            d.Frame(layer).remove(index);
+        }
+        catch(LayerDoesNotExist | DrawableNotInitialized e){
+            System.out.printf("quad cannot be drawn to layer: %s \n", layer);
+        }
     }
 
     @Override
-    public void reshape(int x, int y) {
-        // TODO Auto-generated method stub
+    public void reshape(int x, int y, int w, int h) {
+        // TODO we cant resize yet lol
         
     }
 

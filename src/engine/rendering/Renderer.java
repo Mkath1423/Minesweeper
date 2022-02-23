@@ -33,10 +33,5 @@ public class Renderer
    
         window.setVisible(true);
         
-    }    
-
-    public static void main(String[] args){
-        System.out.println("main");
-        init();
     }
 }

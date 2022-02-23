@@ -1,6 +1,6 @@
 package minesweeper;
 
-import minesweeper.util.Color;
+import engine.utils.Color;
 
 public final class Constants {
     public static final class kTile{

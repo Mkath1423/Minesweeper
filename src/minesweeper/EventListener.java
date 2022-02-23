@@ -6,6 +6,7 @@ import com.jogamp.opengl.GLEventListener;
 
 import minesweeper.Constants.kGame;
 import minesweeper.gametypes.Tile;
+import minesweeper.util.GameUtils;
 import engine.utils.Point;
 
 public class EventListener implements GLEventListener{

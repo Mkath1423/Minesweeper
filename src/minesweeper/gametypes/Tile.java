@@ -1,9 +1,8 @@
 package minesweeper.gametypes;
 
-import minesweeper.util.Quad;
-
 import com.jogamp.opengl.GL2;
 
+import engine.drawables.Quad;
 import minesweeper.Constants.kTile;;
 
 public class Tile {
