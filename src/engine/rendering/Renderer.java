@@ -1,4 +1,4 @@
-package minesweeper;
+package engine.rendering;
 
 import javax.swing.JFrame;
 
@@ -9,6 +9,8 @@ import com.jogamp.opengl.GLProfile;
 
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.util.FPSAnimator;
+
+import minesweeper.EventListener;
 
 public class Renderer
 {
