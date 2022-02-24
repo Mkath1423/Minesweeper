@@ -5,7 +5,7 @@ import java.util.List;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 
-import engine.drawables.Drawable;
+import engine.rendering.drawables.Drawable;
 
 public class Layer {
 
@@ -17,6 +17,7 @@ public class Layer {
 
     public int add(Drawable d){
         // called by drawables to append themselves to the layer
+        System.out.println("added thing");
         layer.add(d);
         return layer.size() - 1;
     }

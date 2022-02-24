@@ -1,4 +1,4 @@
-package engine.drawables;
+package engine.rendering.drawables;
 
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
@@ -18,7 +18,7 @@ public class Quad implements Drawable{
     public Color color;
 
     public int index = -1;
-    public int layer = 0;
+    public Layers layer = Layers.DEFAULT;
 
     public Quad(Point lb, Point rb, Point rt, Point lt){
         left_top = lt;
@@ -63,10 +63,10 @@ public class Quad implements Drawable{
     }
 
     @Override
-    public void init(Drawer d) {
+    public void init() {
         try{
 
-            index = d.Frame(layer).add(this);
+            index = Drawer.Frame(layer).add(this);
         }
         catch(LayerDoesNotExist | DrawableNotInitialized e){
             System.out.printf("quad cannot be drawn to layer: %s \n", layer);
@@ -91,9 +91,9 @@ public class Quad implements Drawable{
 
 
     @Override
-    public void dispose(Drawer d) {
+    public void dispose() {
         try{
-            d.Frame(layer).remove(index);
+            Drawer.Frame(layer).remove(index);
         }
         catch(LayerDoesNotExist | DrawableNotInitialized e){
             System.out.printf("quad cannot be drawn to layer: %s \n", layer);

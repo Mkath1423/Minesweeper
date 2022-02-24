@@ -1,4 +1,4 @@
-package engine.drawables;
+package engine.rendering.drawables;
 
 public enum Layers {
     DEFAULT,
