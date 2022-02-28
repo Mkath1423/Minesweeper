@@ -11,6 +11,7 @@ import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.util.FPSAnimator;
 
 import engine.EventListener;
+import minesweeper.Game;
 
 public class Renderer
 {
@@ -24,7 +25,7 @@ public class Renderer
         window = GLWindow.create(caps);
         window.setSize(640, 320);
         window.setRealized(false);
-        window.addGLEventListener(new EventListener());
+        window.addGLEventListener(new EventListener(new Game()));
 
         
 

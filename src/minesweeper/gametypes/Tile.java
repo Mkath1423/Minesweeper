@@ -14,8 +14,8 @@ public class Tile implements Drawable{
     public Quad outline;
     public Quad inner;
 
-    public int x;
-    public int y;
+    public float x;
+    public float y;
     public float l;
 
     public boolean isHidden;
@@ -25,25 +25,24 @@ public class Tile implements Drawable{
     public int index;
     public Layers layer;
 
-    public Tile(int _x, int _y, int _l){
-        x = _x*_l;
-        y = _y*_l;
+    public Tile(float _x, float _y, float _l){
+        x = _x;
+        y = _y;
         l = _l;
 
         isHidden = true;
         isBomb = false;
         count = 0;
 
-        outline = Quad.Square(x, y, _l, kTile.boarderColor);
-        inner   = Quad.Square(x + (l * kTile.boarderPercent / 2), 
-                              y + (l * kTile.boarderPercent / 2), 
+        outline = Quad.Square(x, y, l, kTile.boarderColor);
+        inner   = Quad.Square(x + l * (1 - kTile.boarderPercent) / 2, 
+                              y + l * (1 - kTile.boarderPercent) / 2, 
                               l * kTile.boarderPercent, 
                               kTile.innerColor);
         init();
     }
 
     public void draw(GL2 gl){
-        System.out.println("drawing tile");
         if(!isHidden && isBomb){
             outline.draw(gl);
             inner.draw(gl);

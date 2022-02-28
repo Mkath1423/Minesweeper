@@ -7,10 +7,15 @@ import com.jogamp.opengl.GLEventListener;
 import minesweeper.Constants.kGame;
 import minesweeper.gametypes.Tile;
 import minesweeper.util.GameUtils;
+import engine.rendering.Drawer;
 import engine.utils.Point;
 
 public class EventListener implements GLEventListener{
-    public Tile tile;
+    public GameLoop gameLoop;
+
+    public EventListener(GameLoop gameLoop){
+        this.gameLoop = gameLoop;
+    }
 
     @Override
     public void display(GLAutoDrawable drawable) {
@@ -19,26 +24,26 @@ public class EventListener implements GLEventListener{
         gl.glClearColor(0.5f, 1, 1, 1);
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
 
-        tile.draw(gl);
-
-    
+        gameLoop.update(1);
+        Drawer.draw(gl);    
     }
 
     @Override
     public void dispose(GLAutoDrawable drawable) {
-        
         System.out.println("dispose");
+        gameLoop.dispose();
     }
 
     @Override
     public void init(GLAutoDrawable drawable){
         GL2 gl = drawable.getGL().getGL2();
-        tile = new Tile(40, 10, 10);
-
-        System.out.println("finished init");
 
         gl.glClearColor(0.5f, 1, 1, 1);
-        gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
+        gl.glClear(GL2.GL_COLOR_BUFFER_BIT);        
+        
+        gameLoop.init();
+
+        System.out.println("finished init");
     }
 
     @Override
@@ -53,6 +58,5 @@ public class EventListener implements GLEventListener{
         gl.glMatrixMode(GL2.GL_MODELVIEW);
 
         System.out.println("reshape");
-    }
-    
+    }   
 }
