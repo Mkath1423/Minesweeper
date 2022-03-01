@@ -10,7 +10,7 @@ import engine.rendering.drawables.Layers;
 import engine.rendering.drawables.Quad;
 import minesweeper.Constants.kTile;;
 
-public class Tile implements Drawable{
+public class Tile implements Drawable {
     public Quad outline;
     public Quad inner;
 

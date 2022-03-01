@@ -1,8 +1,10 @@
 package engine.events;
 
+import java.util.function.Consumer;
+
 public interface EventHandler<T> {
-    public boolean isRaised();
+    //public boolean isRaised();
     public void raiseListeners(T data);
-    public int registerListener(EventListener<T> listener);
-    public void unregisterListener(int index);
+    public int register(Consumer<T> listener);
+    public void unregister(int index);
 }
