@@ -11,6 +11,7 @@ import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.util.FPSAnimator;
 
 import engine.EventListener;
+import engine.Inputs.MouseInputCaller;
 import minesweeper.Game;
 
 public class Renderer
@@ -26,7 +27,7 @@ public class Renderer
         window.setSize(640, 320);
         window.setRealized(false);
         window.addGLEventListener(new EventListener(new Game()));
-
+        window.addMouseListener(new MouseInputCaller());
         
 
         FPSAnimator animator = new FPSAnimator(window, 130);

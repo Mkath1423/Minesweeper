@@ -1,6 +1,6 @@
 package engine.rendering.drawables;
 
-public enum Layers {
+public enum LayerKeys {
     DEFAULT,
     BACKGROUND,
     MIDGROUND,

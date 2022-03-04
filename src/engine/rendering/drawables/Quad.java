@@ -18,7 +18,7 @@ public class Quad implements Drawable{
     public Color color;
 
     public int index = -1;
-    public Layers layer = Layers.DEFAULT;
+    public LayerKeys layer = LayerKeys.DEFAULT;
 
     public Quad(Point lb, Point rb, Point rt, Point lt){
         left_top = lt;

@@ -13,13 +13,13 @@ import com.jogamp.opengl.GLEventListener;
 
 import engine.exeptions.DrawableNotInitialized;
 import engine.exeptions.LayerDoesNotExist;
-import engine.rendering.drawables.Layers;
+import engine.rendering.drawables.LayerKeys;
 
 public class Drawer{
 
-    private static Map<Layers, Layer> frame;
+    private static Map<LayerKeys, Layer> frame;
   
-    public static Layer Frame(Layers layer) throws LayerDoesNotExist, DrawableNotInitialized{
+    public static Layer Frame(LayerKeys layer) throws LayerDoesNotExist, DrawableNotInitialized{
         if(frame.containsKey(layer)){
             return frame.get(layer);
         }
@@ -27,18 +27,18 @@ public class Drawer{
     }
 
     public static void init(){
-        frame = new EnumMap<Layers, Layer>(Layers.class);
-        for (Layers layer : Layers.values()) {
+        frame = new EnumMap<LayerKeys, Layer>(LayerKeys.class);
+        for (LayerKeys layer : LayerKeys.values()) {
             frame.put(layer, new Layer());
         }
     }
 
-    public static void addLayer(Layers layer){
+    public static void addLayer(LayerKeys layer){
         frame.put(layer, new Layer());
     }
 
     public static void draw(GL2 gl){
-        for(Map.Entry<Layers, Layer> entry : frame.entrySet()){
+        for(Map.Entry<LayerKeys, Layer> entry : frame.entrySet()){
             entry.getValue().draw(gl);
         }
     }

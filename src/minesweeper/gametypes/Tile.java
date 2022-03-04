@@ -6,7 +6,7 @@ import engine.exeptions.DrawableNotInitialized;
 import engine.exeptions.LayerDoesNotExist;
 import engine.rendering.Drawer;
 import engine.rendering.drawables.Drawable;
-import engine.rendering.drawables.Layers;
+import engine.rendering.drawables.LayerKeys;
 import engine.rendering.drawables.Quad;
 import minesweeper.Constants.kTile;;
 
@@ -23,7 +23,7 @@ public class Tile implements Drawable {
     public int count;
 
     public int index;
-    public Layers layer;
+    public LayerKeys layer;
 
     public Tile(float _x, float _y, float _l){
         x = _x;
@@ -63,7 +63,7 @@ public class Tile implements Drawable {
     @Override
     public void init() {
         try{
-            index = Drawer.Frame(Layers.MIDGROUND).add(this);
+            index = Drawer.Frame(LayerKeys.MIDGROUND).add(this);
         }
         catch(LayerDoesNotExist | DrawableNotInitialized e){
             System.out.println(e);
@@ -75,7 +75,7 @@ public class Tile implements Drawable {
     public void dispose() {
         // TODO Auto-generated method stub
         try{
-            Drawer.Frame(Layers.MIDGROUND).add(this);
+            Drawer.Frame(LayerKeys.MIDGROUND).add(this);
         }
         catch(LayerDoesNotExist | DrawableNotInitialized e){
             

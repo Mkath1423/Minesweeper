@@ -8,18 +8,35 @@ import java.util.function.Consumer;
 
 import com.jogamp.newt.event.MouseEvent;
 
-public class MouseInput {
-    private static Map<MouseInputs, List<Consumer<MouseEvent>>> listeners;
+import engine.events.EventHandler;
 
-    public void init(){
-        listeners = new EnumMap<MouseInputs, List<Consumer<MouseEvent>>>(MouseInputs.class);
+public class MouseInput{
+    private static Map<MouseInputKeys, List<Consumer<MouseEvent>>> listeners;
 
-        for (MouseInputs mouseInput : MouseInputs.values()) {
+    public static void init(){
+        listeners = new EnumMap<MouseInputKeys, List<Consumer<MouseEvent>>>(MouseInputKeys.class);
+
+        for (MouseInputKeys mouseInput : MouseInputKeys.values()) {
             listeners.put(mouseInput, new ArrayList<Consumer<MouseEvent>>());
         }
     }
 
-    public static int register(MouseInputs event, Consumer<MouseEvent> consumer){
-        return listeners.get(event).length();
+    public static void raiseListeners(MouseInputKeys key, MouseEvent data){
+        for(Consumer<MouseEvent> consumer : listeners.get(key)){
+            consumer.accept(data);
+        }
     }
+
+    public static int register(MouseInputKeys key, Consumer<MouseEvent> consumer){
+        return listeners.get(key).size() - 1;
+    }
+
+    public static boolean unregister(MouseInputKeys key, int index){
+        if(index > listeners.get(key).size() -1) return false;
+
+        listeners.get(key).remove(index);
+
+        return true;
+    }
+
 }
