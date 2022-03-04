@@ -1,7 +1,10 @@
 package minesweeper.gametypes;
 
+import com.jogamp.newt.event.MouseEvent;
 import com.jogamp.opengl.GL2;
 
+import engine.Inputs.MouseInput;
+import engine.Inputs.MouseInputKeys;
 import engine.exeptions.DrawableNotInitialized;
 import engine.exeptions.LayerDoesNotExist;
 import engine.rendering.Drawer;
@@ -39,6 +42,9 @@ public class Tile implements Drawable {
                               y + l * (1 - kTile.boarderPercent) / 2, 
                               l * kTile.boarderPercent, 
                               kTile.innerColor);
+
+        int i = MouseInput.register(MouseInputKeys.CLICKED, this::onMouseClicked);
+        System.out.println(i);
         init();
     }
 
@@ -58,6 +64,11 @@ public class Tile implements Drawable {
             inner.draw(gl);
             // hidden sprite
         }
+    }
+
+    public void onMouseClicked(MouseEvent e){
+        System.out.println("x");
+        isHidden = !isHidden;
     }
 
     @Override

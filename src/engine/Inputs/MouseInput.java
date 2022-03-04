@@ -8,8 +8,6 @@ import java.util.function.Consumer;
 
 import com.jogamp.newt.event.MouseEvent;
 
-import engine.events.EventHandler;
-
 public class MouseInput{
     private static Map<MouseInputKeys, List<Consumer<MouseEvent>>> listeners;
 
@@ -28,6 +26,7 @@ public class MouseInput{
     }
 
     public static int register(MouseInputKeys key, Consumer<MouseEvent> consumer){
+        listeners.get(key).add(consumer);
         return listeners.get(key).size() - 1;
     }
 
