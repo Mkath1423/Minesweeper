@@ -1,4 +1,4 @@
-package engine.utils;
+package engine.rendering.color;
 
 public class Color {
     public final float r;

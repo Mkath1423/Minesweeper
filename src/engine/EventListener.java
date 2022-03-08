@@ -8,7 +8,7 @@ import minesweeper.Constants.kGame;
 import minesweeper.gametypes.Tile;
 import minesweeper.util.GameUtils;
 import engine.rendering.Drawer;
-import engine.utils.Point;
+import engine.rendering.geometry.Point;
 
 public class EventListener implements GLEventListener{
     public GameLoop gameLoop;

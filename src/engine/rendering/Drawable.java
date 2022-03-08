@@ -1,8 +1,6 @@
-package engine.rendering.drawables;
+package engine.rendering;
 
 import com.jogamp.opengl.GL2;
-
-import engine.rendering.Drawer;
 
 public interface Drawable {
     

@@ -5,8 +5,6 @@ import java.util.List;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 
-import engine.rendering.drawables.Drawable;
-
 public class Layer {
 
     public List<Drawable> layer;

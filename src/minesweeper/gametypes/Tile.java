@@ -10,10 +10,12 @@ import engine.Inputs.MouseInput;
 import engine.Inputs.MouseInputKeys;
 import engine.exeptions.DrawableNotInitialized;
 import engine.exeptions.LayerDoesNotExist;
+import engine.physics2D.collisions.Collisions;
+import engine.rendering.Drawable;
 import engine.rendering.Drawer;
-import engine.rendering.drawables.Drawable;
-import engine.rendering.drawables.LayerKeys;
-import engine.rendering.drawables.Quad;
+import engine.rendering.LayerKeys;
+import engine.rendering.geometry.Point;
+import engine.rendering.geometry.Quad;
 import minesweeper.Constants.kTile;;
 
 public class Tile implements Drawable {
@@ -52,6 +54,10 @@ public class Tile implements Drawable {
         init();
     }
 
+    public Tile(Point point, float l) {
+        this(point.x, point.y, l);
+    }
+
     public void draw(GL2 gl){
         if(!isHidden && isBomb){
             outline.draw(gl);
@@ -73,8 +79,10 @@ public class Tile implements Drawable {
         System.out.println(e.getKeyCode());
     }
     public void onMouseClicked(MouseEvent e){
-        System.out.println("x");
-        isHidden = !isHidden;
+        if(Collisions.Square_Point(outline, new Point(e.getX(), e.getY()))){
+            System.out.println(index);
+            isHidden = !isHidden;
+        }
     }
 
     @Override

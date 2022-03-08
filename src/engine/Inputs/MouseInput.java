@@ -11,7 +11,7 @@ import com.jogamp.newt.event.MouseEvent;
 public class MouseInput{
     private static Map<MouseInputKeys, List<Consumer<MouseEvent>>> listeners;
 
-    public static void init(){
+    static {
         listeners = new EnumMap<MouseInputKeys, List<Consumer<MouseEvent>>>(MouseInputKeys.class);
 
         for (MouseInputKeys mouseInput : MouseInputKeys.values()) {

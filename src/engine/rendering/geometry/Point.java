@@ -1,4 +1,4 @@
-package engine.utils;
+package engine.rendering.geometry;
 
 public class Point {
     public float x;

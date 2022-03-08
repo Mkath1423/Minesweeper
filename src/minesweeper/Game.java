@@ -1,9 +1,7 @@
 package minesweeper;
 
 import engine.GameLoop;
-
-import engine.utils.Point;
-
+import engine.rendering.geometry.Point;
 import minesweeper.Constants.kGame;
 import minesweeper.gametypes.Tile;
 
@@ -11,8 +9,11 @@ public class Game implements GameLoop{
 
     public Tile[][] tiles;
 
+    public Tile tile;
+
     @Override
     public void init() {
+        /*
         Point initalPosition = new Point(100f, 0f);
 
         tiles = new Tile[Constants.kGame.ySize][Constants.kGame.xSize];
@@ -24,7 +25,8 @@ public class Game implements GameLoop{
                                        Constants.kTile.length);
             }
         }
-        
+        */
+        tile = new Tile(new Point(0, 0), 100);
     }
 
     @Override

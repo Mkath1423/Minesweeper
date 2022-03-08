@@ -13,7 +13,6 @@ import com.jogamp.opengl.GLEventListener;
 
 import engine.exeptions.DrawableNotInitialized;
 import engine.exeptions.LayerDoesNotExist;
-import engine.rendering.drawables.LayerKeys;
 
 public class Drawer{
 
