@@ -22,7 +22,6 @@ public class MouseInputCaller implements MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent data){
-        System.out.printf("(%s, %s)\n", data.getX(), data.getY());
         MouseInput.raiseListeners(MouseInputKeys.CLICKED, data);
     }
 

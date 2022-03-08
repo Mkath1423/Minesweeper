@@ -48,7 +48,7 @@ public class Tile implements Drawable {
                               l * kTile.boarderPercent, 
                               kTile.innerColor);
 
-        //int i = MouseInput.register(MouseInputKeys.CLICKED, this::onMouseClicked);
+        int i = MouseInput.register(MouseInputKeys.CLICKED, this::onMouseClicked);
 
         int j = KeyInput.register(KeyInputKeys.A, this::onAPressed);
         init();
@@ -79,6 +79,9 @@ public class Tile implements Drawable {
         System.out.println(e.getKeyCode());
     }
     public void onMouseClicked(MouseEvent e){
+        System.out.printf("(%s, %s)\n", e.getX(), e.getY());
+        System.out.printf("x in [%s, %s]\n", outline.left_bottom.x, outline.right_bottom.x);
+        System.out.printf("y in [%s, %s]\n", outline.left_bottom.y, outline.left_top.y);
         if(Collisions.Square_Point(outline, new Point(e.getX(), e.getY()))){
             System.out.println(index);
             isHidden = !isHidden;
