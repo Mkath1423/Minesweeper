@@ -2,20 +2,25 @@ package minesweeper.gametypes;
 
 import com.jogamp.newt.event.KeyEvent;
 import com.jogamp.newt.event.MouseEvent;
+
 import com.jogamp.opengl.GL2;
 
 import engine.Inputs.KeyInput;
 import engine.Inputs.KeyInputKeys;
 import engine.Inputs.MouseInput;
 import engine.Inputs.MouseInputKeys;
+
 import engine.exeptions.DrawableNotInitialized;
 import engine.exeptions.LayerDoesNotExist;
+
 import engine.physics2D.collisions.Collisions;
+
 import engine.rendering.Drawable;
 import engine.rendering.Drawer;
 import engine.rendering.LayerKeys;
 import engine.rendering.geometry.Point;
 import engine.rendering.geometry.Quad;
+
 import minesweeper.Constants.kTile;;
 
 public class Tile implements Drawable {
