@@ -28,6 +28,7 @@ public class Tile implements Drawable {
 
     public boolean isHidden;
     public boolean isBomb;
+    public boolean isFlagged;
     public int count;
 
     public int index;
@@ -40,6 +41,7 @@ public class Tile implements Drawable {
 
         isHidden = true;
         isBomb = false;
+        isFlagged = false;
         count = 0;
 
         outline = Quad.Square(x, y, l, kTile.boarderColor);
@@ -48,9 +50,9 @@ public class Tile implements Drawable {
                               l * kTile.boarderPercent, 
                               kTile.innerColor);
 
-        int i = MouseInput.register(MouseInputKeys.CLICKED, this::onMouseClicked);
+        MouseInput.register(MouseInputKeys.CLICKED, this::onMouseClicked);
+        KeyInput.register(KeyInputKeys.A, this::onAPressed);
 
-        int j = KeyInput.register(KeyInputKeys.A, this::onAPressed);
         init();
     }
 
@@ -59,32 +61,33 @@ public class Tile implements Drawable {
     }
 
     public void draw(GL2 gl){
-        if(!isHidden && isBomb){
-            outline.draw(gl);
-            inner.draw(gl);
+
+        
+        outline.draw(gl);
+        inner.draw(gl);
+
+        if(isFlagged){
+            // flag sprite
+        }
+        else if(!isHidden && isBomb){
             // bomb sprite
         }
         else if(!isHidden && !isBomb){
-            outline.draw(gl);
-            inner.draw(gl);
             // number sprite
-        }
-        else if(isHidden){
-            outline.draw(gl);
-            inner.draw(gl);
-            // hidden sprite
         }
     }
     public void onAPressed(KeyEvent e){
         System.out.println(e.getKeyCode());
     }
     public void onMouseClicked(MouseEvent e){
-        System.out.printf("(%s, %s)\n", e.getX(), e.getY());
-        System.out.printf("x in [%s, %s]\n", outline.left_bottom.x, outline.right_bottom.x);
-        System.out.printf("y in [%s, %s]\n", outline.left_bottom.y, outline.left_top.y);
         if(Collisions.Square_Point(outline, new Point(e.getX(), e.getY()))){
-            System.out.println(index);
-            isHidden = !isHidden;
+
+            if(e.getButton() == 1){
+                isFlagged = !isFlagged;
+            }
+            else if(e.getButton() == 0 && ! isFlagged){
+                isHidden = !isHidden;
+            }
         }
     }
 

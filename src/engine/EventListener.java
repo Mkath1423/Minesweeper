@@ -54,7 +54,7 @@ public class EventListener implements GLEventListener{
         
         gl.glLoadIdentity();
 
-        gl.glOrtho(0, w, 0, h, -1, 1);
+        gl.glOrtho(0, w, h, 0, -1, 1);
         gl.glMatrixMode(GL2.GL_MODELVIEW);
 
         System.out.println("reshape");

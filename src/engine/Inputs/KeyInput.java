@@ -21,6 +21,8 @@ public class KeyInput{
     }
 
     public static void raiseListeners(KeyInputKeys key, KeyEvent data){
+        if(!listeners.containsKey(key)) return;
+        
         for(Consumer<KeyEvent> consumer : listeners.get(key)){
             consumer.accept(data);
         }

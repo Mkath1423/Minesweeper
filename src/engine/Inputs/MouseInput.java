@@ -20,6 +20,8 @@ public class MouseInput{
     }
 
     public static void raiseListeners(MouseInputKeys key, MouseEvent data){
+        if(!listeners.containsKey(key)) return;
+
         for(Consumer<MouseEvent> consumer : listeners.get(key)){
             consumer.accept(data);
         }

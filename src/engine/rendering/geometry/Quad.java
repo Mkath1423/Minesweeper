@@ -32,8 +32,8 @@ public class Quad implements Drawable {
 
     public Quad(Point lb, Point rb, Point rt, Point lt, Color _color){
         left_top = lt;
-        right_top = lb;
-        left_bottom = rt;
+        right_top = rt;
+        left_bottom = lb;
         right_bottom = rb;
 
         color = _color;
