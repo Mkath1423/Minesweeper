@@ -5,6 +5,8 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.jogamp.opengl.util.texture.Texture;
 import com.jogamp.opengl.util.texture.awt.AWTTextureIO;
@@ -12,35 +14,42 @@ import com.jogamp.opengl.util.texture.awt.AWTTextureIO;
 import engine.rendering.Renderer;
 
 public class ImageResource  {
-    private Texture texture = null;
+    private static Map<URL, Texture> textures = new HashMap<URL, Texture>();
 
-    private BufferedImage image = null;   
+    private static Map<URL, BufferedImage> images = new HashMap<URL, BufferedImage>();
 
-    public ImageResource(String path){
+    private static URL generateURl(String path){
+        // generate the relative path
+        return ImageResource.class.getResource(path); // TODO: change the url building 
+    }
+
+    public static void loadImage(String path){
         
-        // generate the relatice path
-        URL url = ImageResource.class.getResource(path); // TODO: change the url building
+        URL url = generateURl(path);
 
         // load the image from the file
         try {
-            image = ImageIO.read(url);
+            if(!images.containsKey(url)){
+                images.put(url, ImageIO.read(url)); 
+                images.get(url).flush(); // Apperently this fixes a potencial memory leak
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        // Apperently this fixes a potencial memory leak
-        if(image != null){
-            image.flush();
-        }
     }
 
-    public Texture getTexture(){
-        if(image == null) return null;
+    public static Texture getTexture(String path){
+        URL url = generateURl(path);
 
-        if(texture == null){
-            texture = AWTTextureIO.newTexture(Renderer.getProfile(), image, true);
+        // return null if the image has not been loaded
+        if(!images.containsKey(url)) return null;
+        if(images.get(url) == null) return null;
+        
+        // generate the texture if needed and return it
+        if(!textures.containsKey(url)){
+            textures.put(url, AWTTextureIO.newTexture(Renderer.getProfile(), images.get(url), true));
         }
         
-        return texture;
+        return textures.get(url);
     }
 }
