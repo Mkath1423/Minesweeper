@@ -19,9 +19,11 @@ public class Renderer
 {
     private static GLWindow window = null;
 
+    private static GLProfile profile = null;
+
     public static void init(){
         GLProfile.initSingleton();
-        GLProfile profile = GLProfile.get(GLProfile.GL2);
+        profile = GLProfile.get(GLProfile.GL2);
         GLCapabilities caps = new GLCapabilities(profile);
         
         window = GLWindow.create(caps);
@@ -36,6 +38,9 @@ public class Renderer
         animator.start();
    
         window.setVisible(true);
-        
+    }
+
+    public static GLProfile getProfile(){
+        return profile;
     }
 }
