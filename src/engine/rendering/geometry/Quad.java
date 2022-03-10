@@ -27,7 +27,8 @@ public class Quad implements Drawable {
         left_bottom = rt;
         right_bottom = rb;
 
-        color = new Color(1f, 1f, 1f, 1f);
+        color = new Color(0.5f, 1f, 0.5f, 1f);
+        System.out.println(this);
     }
 
     public Quad(Point lb, Point rb, Point rt, Point lt, Color _color){

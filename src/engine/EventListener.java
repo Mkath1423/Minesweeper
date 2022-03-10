@@ -8,7 +8,11 @@ import minesweeper.Constants.kGame;
 import minesweeper.gametypes.Tile;
 import minesweeper.util.GameUtils;
 import engine.rendering.Drawer;
+import engine.rendering.color.Color;
 import engine.rendering.geometry.Point;
+import engine.rendering.geometry.Quad;
+import engine.resourse.ImageResource;
+import engine.ui.elements.Image;
 
 public class EventListener implements GLEventListener{
     public GameLoop gameLoop;
@@ -21,11 +25,20 @@ public class EventListener implements GLEventListener{
     public void display(GLAutoDrawable drawable) {
         GL2 gl = drawable.getGL().getGL2();
 
+        // Clear the screen
         gl.glClearColor(0.5f, 1, 1, 1);
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
+        
+        Color c = new Color(0.9f, 0.5f, 1, 1);
 
-        gameLoop.update(1);
-        Drawer.draw(gl);    
+        
+        Drawer.drawQuad(Quad.Square(0, 0, 100, c), 
+                        ImageResource.getTexture("2000.png"), 
+                            gl);
+        
+        
+        //gameLoop.update(1);
+        //Drawer.draw(gl);    
     }
 
     @Override
@@ -38,10 +51,15 @@ public class EventListener implements GLEventListener{
     public void init(GLAutoDrawable drawable){
         GL2 gl = drawable.getGL().getGL2();
 
+        gl.glEnable(GL2.GL_TEXTURE_2D);
+
         gl.glClearColor(0.5f, 1, 1, 1);
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);        
         
         gameLoop.init();
+
+        ImageResource.loadImage("2000.png");
+        System.out.println(ImageResource.getTexture("2000.png"));
 
         System.out.println("finished init");
     }
