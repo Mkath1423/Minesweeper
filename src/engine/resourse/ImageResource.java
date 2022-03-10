@@ -14,7 +14,7 @@ import com.jogamp.opengl.util.texture.awt.AWTTextureIO;
 import engine.rendering.Renderer;
 
 public class ImageResource  {
-    private static Map<URL, Texture> textures = new HashMap<URL, Texture>();
+    private static Map<URL, SpriteMap> textures = new HashMap<URL, SpriteMap>();
 
     private static Map<URL, BufferedImage> images = new HashMap<URL, BufferedImage>();
 
@@ -23,7 +23,7 @@ public class ImageResource  {
         return ImageResource.class.getResource(path); // TODO: change the url building 
     }
 
-    public static void loadImage(String path){
+    public static void loadImage(String path, boolean hasMultipleSprites){
         
         URL url = generateURl(path);
 

@@ -63,13 +63,13 @@ public class Drawer{
             gl.glTexCoord2f(0, 0);
             gl.glVertex2f(q.left_top.x,     q.left_top.y);
 
-            gl.glTexCoord2f(1, 0);
+            gl.glTexCoord2f(0.125f, 0);
             gl.glVertex2f(q.left_bottom.x,  q.left_bottom.y);
 
-            gl.glTexCoord2f(1, 1);
+            gl.glTexCoord2f(0.125f, 0.5f);
             gl.glVertex2f(q.right_bottom.x, q.right_bottom.y);
 
-            gl.glTexCoord2f(0, 1);
+            gl.glTexCoord2f(0, 0.5f);
             gl.glVertex2f(q.right_top.x,    q.right_top.y);
         gl.glEnd();
 

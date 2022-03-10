@@ -50,6 +50,16 @@ public class Quad implements Drawable {
         );
     }
 
+    public static Quad Rectangle(float x, float y, float w, float h){
+        return new Quad(
+            new Point(x    , y    ),
+            new Point(x + w, y    ),
+            new Point(x + w, y + h),
+            new Point(x    , y + h),
+            new Color(0.5f, 1f, 0.5f, 1f)
+        );
+    }
+
     public void shift(float x, float y){
         left_top.x     += x;
         left_top.y     += y;
