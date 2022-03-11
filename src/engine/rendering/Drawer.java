@@ -16,6 +16,7 @@ import engine.exeptions.DrawableNotInitialized;
 import engine.exeptions.LayerDoesNotExist;
 import engine.rendering.color.Color;
 import engine.rendering.geometry.Quad;
+import engine.resourse.Sprite;
 
 public class Drawer{
 
@@ -53,24 +54,30 @@ public class Drawer{
         gl.glFlush();
     }
 
-    public static void drawQuad(Quad q, Texture t, GL2 gl){
-        
-
-        if(t != null){
-            gl.glBindTexture(GL2.GL_TEXTURE_2D, t.getTextureObject());
+    public static void drawQuad(Quad q, Sprite s, GL2 gl){
+        if(q == null || s == null || gl == null){
+            // System.out.println("Null parameter in Drawer.drawQuad");
+            return;
         }
+
+        
+        gl.glBindTexture(GL2.GL_TEXTURE_2D, s.texture.getTextureObject());
+        
         gl.glBegin(GL2.GL_QUADS);
-            gl.glTexCoord2f(0, 0);
-            gl.glVertex2f(q.left_top.x,     q.left_top.y);
+            gl.glTexCoord2f(s.slice.left_top.x,     s.slice.left_top.y);
+            gl.glVertex2f(q.left_top.x,             q.left_top.y);
 
-            gl.glTexCoord2f(0.125f, 0);
-            gl.glVertex2f(q.left_bottom.x,  q.left_bottom.y);
+            
+            gl.glTexCoord2f(s.slice.left_bottom.x,  s.slice.left_bottom.y);
+            gl.glVertex2f(q.left_bottom.x,          q.left_bottom.y);
 
-            gl.glTexCoord2f(0.125f, 0.5f);
-            gl.glVertex2f(q.right_bottom.x, q.right_bottom.y);
+            
+            gl.glTexCoord2f(s.slice.right_bottom.x, s.slice.right_bottom.y);
+            gl.glVertex2f(q.right_bottom.x,         q.right_bottom.y);
 
-            gl.glTexCoord2f(0, 0.5f);
-            gl.glVertex2f(q.right_top.x,    q.right_top.y);
+            
+            gl.glTexCoord2f(s.slice.right_top.x,    s.slice.right_top.y);
+            gl.glVertex2f(q.right_top.x,            q.right_top.y);
         gl.glEnd();
 
         gl.glBindTexture(GL2.GL_TEXTURE_2D, 0); // clear the texture buffer

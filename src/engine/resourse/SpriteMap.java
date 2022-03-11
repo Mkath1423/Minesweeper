@@ -3,12 +3,8 @@ package engine.resourse;
 import com.jogamp.opengl.util.texture.Texture;
 
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
-import java.nio.Buffer;
-import java.util.HashMap;
-import java.util.Map;
 
+import engine.rendering.Renderer;
 import engine.rendering.geometry.Quad;
 
 import com.jogamp.opengl.util.texture.awt.AWTTextureIO;
@@ -24,26 +20,34 @@ public class SpriteMap {
     public float cellWidth = 0;
     public float cellHeight = 0;
 
-    public SpriteMap(BufferedImage bf, float cellsWide, float cellsTall){
+    public SpriteMap(Texture texture, float cellsWide, float cellsTall){
         this.cellsWide = cellsWide;
         this.cellsTall = cellsTall;
 
+        this.cellHeight = 1 / cellsTall;
+        this.cellWidth  = 1 / cellsWide;
 
-        cellHeight = bf.getHeight() / cellsTall;
-        cellWidth  = bf.getWidth()  / cellsWide;
+        this.isSliced = true;
+
+        this.texture = texture;
     }
 
-    public Sprite getTexture(){
+    public SpriteMap(Texture texture){
+        this.texture = texture;
+    }
+
+    public Sprite getSprite(){
         return new Sprite(texture);
     }
 
-    public Sprite getTexture(int cell){
-        if(!isSliced) getTexture();
+    public Sprite getSprite(int cell){
+        if(cell >= cellsWide*cellsTall) return null;
 
-        int x = cell % (int)cellsWide;
-        int y = cell / (int)cellsTall;
-
-        return new Sprite(texture, Quad.Rectangle(x*cellWidth, y*cellHeight, cellWidth, cellHeight));
+        if(!isSliced) return getSprite();
         
+        int x = cell % (int)cellsWide;
+        int y = cell / (int)cellsWide;
+        
+        return new Sprite(texture, Quad.Rectangle(x*cellWidth, y*cellHeight, cellWidth, cellHeight));
     }
 }
