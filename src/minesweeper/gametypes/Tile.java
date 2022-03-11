@@ -16,6 +16,7 @@ import engine.rendering.Drawer;
 import engine.rendering.LayerKeys;
 import engine.rendering.geometry.Point;
 import engine.rendering.geometry.Quad;
+import engine.resourse.ImageResource;
 import minesweeper.Constants.kTile;;
 
 public class Tile implements Drawable {
@@ -44,11 +45,10 @@ public class Tile implements Drawable {
         isFlagged = false;
         count = 0;
 
-        outline = Quad.Square(x, y, l, kTile.boarderColor);
+        outline = Quad.Square(x, y, l);
         inner   = Quad.Square(x + l * (1 - kTile.boarderPercent) / 2, 
                               y + l * (1 - kTile.boarderPercent) / 2, 
-                              l * kTile.boarderPercent, 
-                              kTile.innerColor);
+                              l * kTile.boarderPercent);
 
         MouseInput.register(MouseInputKeys.CLICKED, this::onMouseClicked);
         KeyInput.register(KeyInputKeys.A, this::onAPressed);
@@ -61,19 +61,25 @@ public class Tile implements Drawable {
     }
 
     public void draw(GL2 gl){
-
-        
-        outline.draw(gl);
-        inner.draw(gl);
-
         if(isFlagged){
             // flag sprite
+            Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 2), gl);
+        }
+        else if(isHidden){
+            // hidden sprite
+            Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 0), gl);
         }
         else if(!isHidden && isBomb){
             // bomb sprite
+            Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 6), gl);
+        }
+        else if(!isHidden && !isBomb && count == 0){
+            // empty sprite
+            Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 1), gl);
         }
         else if(!isHidden && !isBomb){
             // number sprite
+            Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 7 + count), gl);
         }
     }
     public void onAPressed(KeyEvent e){
@@ -81,7 +87,7 @@ public class Tile implements Drawable {
     }
     public void onMouseClicked(MouseEvent e){
         if(Collisions.Square_Point(outline, new Point(e.getX(), e.getY()))){
-
+            System.out.printf("%s recived %s\n", index, e.getButton());
             if(e.getButton() == 1){
                 isFlagged = !isFlagged;
             }

@@ -13,7 +13,7 @@ public class Sprite {
     public Sprite(Texture texture){
         this.texture = texture;
 
-        slice = Quad.Square(0, 0, 1, new Color(0, 0, 0, 1));
+        slice = Quad.Square(0, 0, 1);
     }
 
     public Sprite(Texture texture, Quad slice){
