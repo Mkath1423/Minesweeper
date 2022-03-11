@@ -14,9 +14,7 @@ import com.jogamp.opengl.util.texture.awt.AWTTextureIO;
 import engine.rendering.Renderer;
 
 public class ImageResource  {
-    private static Map<URL, Texture> textures = new HashMap<URL, Texture>();
-
-    private static Map<URL, BufferedImage> images = new HashMap<URL, BufferedImage>();
+    private static Map<URL, SpriteMap> textures = new HashMap<URL, SpriteMap>();
 
     private static URL generateURl(String path){
         // generate the relative path
@@ -24,32 +22,64 @@ public class ImageResource  {
     }
 
     public static void loadImage(String path){
-        
         URL url = generateURl(path);
 
+        BufferedImage image;
         // load the image from the file
         try {
-            if(!images.containsKey(url)){
-                images.put(url, ImageIO.read(url)); 
-                images.get(url).flush(); // Apperently this fixes a potencial memory leak
-            }
+            image = ImageIO.read(url); 
+            image.flush(); // Apperently this fixes a potencial memory leak
+            
+            // generate the texture
+            Texture texture = AWTTextureIO.newTexture(Renderer.getProfile(), image, false);
+
+            // construct the spritemap object and store it
+            textures.put(url, new SpriteMap(texture));
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static Texture getTexture(String path){
+    public static void loadImage(String path, float cellsWide, float cellsTall){
         URL url = generateURl(path);
 
-        // return null if the image has not been loaded
-        if(!images.containsKey(url)) return null;
-        if(images.get(url) == null) return null;
-        
-        // generate the texture if needed and return it
-        if(!textures.containsKey(url)){
-            textures.put(url, AWTTextureIO.newTexture(Renderer.getProfile(), images.get(url), true));
+        BufferedImage image;
+        // load the image from the file
+        try {
+            image = ImageIO.read(url); 
+            image.flush(); // Apperently this fixes a potencial memory leak
+
+            // generate the texture
+            Texture texture = AWTTextureIO.newTexture(Renderer.getProfile(), image, true);
+
+            // construct the spritemap object and store it
+            textures.put(url, new SpriteMap(texture, cellsWide, cellsTall));
+            
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
+
+    public static Sprite getSprite(String path){
+        URL url = generateURl(path);
         
-        return textures.get(url);
+        // return the texture if it exists
+        if(textures.containsKey(url)){
+            return textures.get(url).getSprite();
+        }
+
+        return null;
+    }
+
+    public static Sprite getSprite(String path, int cell){
+        URL url = generateURl(path);
+        
+        // return the texture if it exists
+        if(textures.containsKey(url)){
+            return textures.get(url).getSprite(cell);
+        }
+
+        return null;
     }
 }

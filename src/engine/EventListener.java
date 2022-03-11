@@ -29,16 +29,8 @@ public class EventListener implements GLEventListener{
         gl.glClearColor(0.5f, 1, 1, 1);
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
         
-        Color c = new Color(0.9f, 0.5f, 1, 1);
-
-        
-        Drawer.drawQuad(Quad.Square(0, 0, 100, c), 
-                        ImageResource.getTexture("2000.png"), 
-                            gl);
-        
-        
-        //gameLoop.update(1);
-        //Drawer.draw(gl);    
+        gameLoop.update(1);
+        Drawer.draw(gl);    
     }
 
     @Override
@@ -58,9 +50,7 @@ public class EventListener implements GLEventListener{
         
         gameLoop.init();
 
-        ImageResource.loadImage("2000.png");
-        System.out.println(ImageResource.getTexture("2000.png"));
-
+        ImageResource.loadImage("2000.png", 8, 2);
         System.out.println("finished init");
     }
 
