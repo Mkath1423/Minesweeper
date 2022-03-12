@@ -55,6 +55,7 @@ public class Drawer{
     }
 
     public static void drawQuad(Quad q, Sprite s, GL2 gl){
+
         if(q == null || s == null || gl == null){
             // System.out.println("Null parameter in Drawer.drawQuad");
             return;

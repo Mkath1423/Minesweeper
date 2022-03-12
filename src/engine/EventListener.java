@@ -4,15 +4,8 @@ import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 
-import minesweeper.Constants.kGame;
-import minesweeper.gametypes.Tile;
-import minesweeper.util.GameUtils;
 import engine.rendering.Drawer;
-import engine.rendering.color.Color;
-import engine.rendering.geometry.Point;
-import engine.rendering.geometry.Quad;
 import engine.resourse.ImageResource;
-import engine.ui.elements.Image;
 
 public class EventListener implements GLEventListener{
     public GameLoop gameLoop;
@@ -49,8 +42,7 @@ public class EventListener implements GLEventListener{
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);        
         
         gameLoop.init();
-
-        ImageResource.loadImage("2000.png", 8, 2);
+        gameLoop.loadTextures();
         System.out.println("finished init");
     }
 

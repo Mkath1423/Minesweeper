@@ -83,12 +83,8 @@ public class Tile implements Drawable {
     }
 
     public void onMouseClicked(MouseEvent e){
-        if(index == 0){
-            System.out.println(outline);
-            System.out.printf("Point(%s, %s)\n", e.getX(), e.getY());
-        }
         if(Collisions.Square_Point(outline, new Point(e.getX(), e.getY()))){
-            System.out.printf("%s recived %s\n", index, e.getButton());
+            //System.out.printf("%s recived %s\n", index, e.getButton());
             if(e.getButton() == 3 && isHidden){
                 isFlagged = !isFlagged;
             }
