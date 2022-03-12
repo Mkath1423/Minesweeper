@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.function.Consumer;
 
 import com.jogamp.newt.event.KeyEvent;
-import com.jogamp.newt.event.MouseEvent;
 
 public class KeyInput{
     private static Map<KeyInputKeys, List<Consumer<KeyEvent>>> listeners;
