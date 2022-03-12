@@ -80,7 +80,7 @@ public class Tile implements Drawable {
     }
 
     public void onMouseClicked(MouseEvent e){
-        if(Collisions.Square_Point(outline, new Point(e.getX(), e.getY()))){
+        if(Collisions.RectPoint(outline, new Point(e.getX(), e.getY()))){
             //System.out.printf("%s recived %s\n", index, e.getButton());
             if(e.getButton() == 3 && isHidden){
                 isFlagged = !isFlagged;
@@ -96,7 +96,7 @@ public class Tile implements Drawable {
         try{
             index = Drawer.Frame(LayerKeys.MIDGROUND).add(this);
         }
-        catch(LayerDoesNotExist | DrawableNotInitialized e){
+        catch(LayerDoesNotExist e){
             System.out.println(e);
         }
         
@@ -108,7 +108,7 @@ public class Tile implements Drawable {
         try{
             Drawer.Frame(LayerKeys.MIDGROUND).add(this);
         }
-        catch(LayerDoesNotExist | DrawableNotInitialized e){
+        catch(LayerDoesNotExist e){
             
         }
     }

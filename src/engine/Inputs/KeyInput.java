@@ -19,6 +19,16 @@ public class KeyInput{
         }
     }
 
+    
+    /** 
+     * Send key data to listeners
+     * 
+     * Invokes all the listeners associated with the KeyEvent.
+     * Data gets passed in as a parameter.
+     * 
+     * @param key the key code from KeyInputKey enum
+     * @param data the key event containing info about the event
+     */
     public static void raiseListeners(KeyInputKeys key, KeyEvent data){
         if(!listeners.containsKey(key)) return;
         
@@ -27,17 +37,28 @@ public class KeyInput{
         }
     }
 
+    
+    /** 
+     * @param key the KeyEvent this callback is associated with
+     * @param consumer a KeyEvent Consumer that will get invoked when an event is triggered
+     * @return int the index in the listener list
+     */
     public static int register(KeyInputKeys key, Consumer<KeyEvent> consumer){
         listeners.get(key).add(consumer);
         return listeners.get(key).size() - 1;
     }
 
-    public static boolean unregister(KeyInputKeys key, int index){
-        if(index > listeners.get(key).size() -1) return false;
+    
+    /** 
+     * @param key the KeyEvent this callback is associated with
+     * @param index a KeyEvent Consumer that will get invoked when an event is triggered
+     */
+    public static void unregister(KeyInputKeys key, int index){
+        // TODO: this doesn't work
+        if(index > listeners.get(key).size() -1) return;
 
         listeners.get(key).remove(index);
 
-        return true;
     }
 
 }
