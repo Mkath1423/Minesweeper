@@ -2,12 +2,7 @@ package engine.resourse;
 
 import com.jogamp.opengl.util.texture.Texture;
 
-import java.awt.image.BufferedImage;
-
-import engine.rendering.Renderer;
 import engine.rendering.geometry.Quad;
-
-import com.jogamp.opengl.util.texture.awt.AWTTextureIO;
 
 public class SpriteMap {
     Texture texture = null;

@@ -1,11 +1,8 @@
 package minesweeper.gametypes;
 
-import com.jogamp.newt.event.KeyEvent;
 import com.jogamp.newt.event.MouseEvent;
 import com.jogamp.opengl.GL2;
 
-import engine.Inputs.KeyInput;
-import engine.Inputs.KeyInputKeys;
 import engine.Inputs.MouseInput;
 import engine.Inputs.MouseInputKeys;
 import engine.exeptions.DrawableNotInitialized;

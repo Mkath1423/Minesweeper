@@ -1,13 +1,9 @@
 package engine.rendering;
 
-import javax.swing.JFrame;
-
-import java.awt.Frame;
 import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.GLCapabilities;
 import com.jogamp.opengl.GLProfile;
 
-import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.util.FPSAnimator;
 
 import engine.EventListener;

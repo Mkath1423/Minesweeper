@@ -1,16 +1,9 @@
 package engine.rendering;
 
-import java.util.Dictionary;
-import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.Map;
-
-import javax.xml.crypto.dsig.keyinfo.KeyValue;
+import java.util.EnumMap;
 
 import com.jogamp.opengl.GL2;
-import com.jogamp.opengl.GLAutoDrawable;
-import com.jogamp.opengl.GLEventListener;
-import com.jogamp.opengl.util.texture.Texture;
 
 import engine.exeptions.DrawableNotInitialized;
 import engine.exeptions.LayerDoesNotExist;

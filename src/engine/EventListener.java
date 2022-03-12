@@ -5,7 +5,6 @@ import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 
 import engine.rendering.Drawer;
-import engine.resourse.ImageResource;
 
 public class EventListener implements GLEventListener{
     public GameLoop gameLoop;

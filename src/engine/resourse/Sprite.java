@@ -2,7 +2,6 @@ package engine.resourse;
 
 import com.jogamp.opengl.util.texture.Texture;
 
-import engine.rendering.color.Color;
 import engine.rendering.geometry.Quad;
 
 public class Sprite {
