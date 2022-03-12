@@ -29,7 +29,7 @@ public class Drawer{
         throw new LayerDoesNotExist("layer '"+ layer + "' does not exist.");
     }
 
-    public static void init(){
+    static {
         frame = new EnumMap<LayerKeys, Layer>(LayerKeys.class);
         for (LayerKeys layer : LayerKeys.values()) {
             frame.put(layer, new Layer());

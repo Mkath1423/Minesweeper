@@ -51,7 +51,6 @@ public class Tile implements Drawable {
                               l * kTile.boarderPercent);
 
         MouseInput.register(MouseInputKeys.CLICKED, this::onMouseClicked);
-        KeyInput.register(KeyInputKeys.A, this::onAPressed);
 
         init();
     }
@@ -82,17 +81,19 @@ public class Tile implements Drawable {
             Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 7 + count), gl);
         }
     }
-    public void onAPressed(KeyEvent e){
-        System.out.println(e.getKeyCode());
-    }
+
     public void onMouseClicked(MouseEvent e){
+        if(index == 0){
+            System.out.println(outline);
+            System.out.printf("Point(%s, %s)\n", e.getX(), e.getY());
+        }
         if(Collisions.Square_Point(outline, new Point(e.getX(), e.getY()))){
             System.out.printf("%s recived %s\n", index, e.getButton());
-            if(e.getButton() == 1){
+            if(e.getButton() == 3 && isHidden){
                 isFlagged = !isFlagged;
             }
-            else if(e.getButton() == 0 && ! isFlagged){
-                isHidden = !isHidden;
+            else if(e.getButton() == 1 && !isFlagged){
+                isHidden =  false;
             }
         }
     }

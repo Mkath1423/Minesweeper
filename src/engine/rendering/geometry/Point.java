@@ -8,4 +8,8 @@ public class Point {
         x = _x;
         y = _y;
     }
+
+    public String toString() {
+        return String.format("(%s, %s)", x, y);
+    }
 }

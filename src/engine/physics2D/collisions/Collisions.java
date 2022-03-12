@@ -16,7 +16,7 @@ public class Collisions {
     public static boolean Square_Point(Quad q, Point p){
         return p.x > q.left_bottom.x  && 
                p.x < q.right_bottom.x && 
-               p.y > q.left_bottom.y  && 
-               p.y < q.left_top.y;
+               p.y < q.left_bottom.y  && 
+               p.y > q.left_top.y;
     }
 }

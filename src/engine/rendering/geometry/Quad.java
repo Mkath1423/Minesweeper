@@ -19,28 +19,28 @@ public class Quad {
     public int index = -1;
     public LayerKeys layer = LayerKeys.DEFAULT;
 
-    public Quad(Point lb, Point rb, Point rt, Point lt){
+    public Quad(Point lt, Point lb, Point rb, Point rt){
         left_top = lt;
-        right_top = lb;
-        left_bottom = rt;
+        left_bottom = lb;
         right_bottom = rb;
+        right_top = rt;
     }
 
     public static Quad Square(float x, float y, float l){
         return new Quad(
             new Point(x    , y    ),
-            new Point(x + l, y    ),
+            new Point(x    , y + l),
             new Point(x + l, y + l),
-            new Point(x    , y + l)
+            new Point(x + l, y    )
         );
     }
 
     public static Quad Rectangle(float x, float y, float w, float h){
         return new Quad(
             new Point(x    , y    ),
-            new Point(x + w, y    ),
+            new Point(x    , y + h),
             new Point(x + w, y + h),
-            new Point(x    , y + h)
+            new Point(x + w, y    )
         );
     }
 
@@ -56,5 +56,9 @@ public class Quad {
 
         right_bottom.x += x;
         right_bottom.y += y;
+    }
+
+    public String toString(){
+        return String.format("Quad(lt:%s, lb:%s, rb:%s, rt:%s)", left_top.toString(), left_bottom.toString(), right_bottom.toString(), right_top.toString());
     }
 }
