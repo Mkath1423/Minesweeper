@@ -12,7 +12,7 @@ public class Game implements GameLoop{
 
     @Override
     public void init() {
-        Point initalPosition = new Point(100f, 0f);
+        Point initalPosition = new Point(0f, 0f);
 
         tiles = new Tile[Constants.kGame.ySize][Constants.kGame.xSize];
 
