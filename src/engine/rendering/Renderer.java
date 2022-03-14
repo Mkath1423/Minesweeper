@@ -1,5 +1,7 @@
 package engine.rendering;
 
+import com.jogamp.newt.event.WindowAdapter;
+import com.jogamp.newt.event.WindowEvent;
 import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.GLCapabilities;
 import com.jogamp.opengl.GLProfile;
@@ -30,10 +32,18 @@ public class Renderer
         window.addKeyListener(new KeyInputCaller());
         
 
-        FPSAnimator animator = new FPSAnimator(window, 130);
+        FPSAnimator animator = new FPSAnimator(window, 60);
         animator.start();
    
         window.setVisible(true);
+
+        window.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowDestroyed(WindowEvent e) {
+                animator.stop();
+                System.exit(1);
+            }
+        });
     }
 
     public static GLProfile getProfile(){

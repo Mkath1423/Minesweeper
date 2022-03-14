@@ -2,6 +2,7 @@ package engine.rendering;
 
 import java.util.Map;
 import java.util.EnumMap;
+import java.util.List;
 
 import com.jogamp.opengl.GL2;
 
@@ -78,16 +79,14 @@ public class Drawer{
     // ------------------------- DRAWING METHODS ------------------------- // 
     
     /** 
-     * Draws a colored quad to the gl context
+     * Draws a quad to the gl window
      * 
      * @param q the quad
      * @param c the color
      * @param gl the gl context
      */
-    public static void drawQuad(Quad q, Color c, GL2 gl){
+    public static void drawQuad(Quad q, GL2 gl){
         gl.glBegin(GL2.GL_QUADS);
-
-        gl.glColor4f(c.r, c.g, c.b, c.a);
 
         gl.glVertex2f(q.left_top.x,     q.left_top.y);
         gl.glVertex2f(q.left_bottom.x,  q.left_bottom.y);
@@ -95,6 +94,47 @@ public class Drawer{
         gl.glVertex2f(q.right_top.x,    q.right_top.y);
 
         gl.glEnd();
+    }
+
+    /** 
+     * Draws a list of quads to the gl window
+     * 
+     * @param qs a list of quads that all use the same sprite
+     * @param s the sprite they all use
+     * @param gl the gl context
+     */
+    public static void drawQuads(List<Quad> qs, Sprite s, GL2 gl){
+        
+        // return is any are null
+        if(qs == null || s == null || gl == null) return;
+
+        // bind the texture to draw on the quad
+        gl.glBindTexture(GL2.GL_TEXTURE_2D, s.texture.getTextureObject());
+        
+        // Start drawing a quad
+        gl.glBegin(GL2.GL_QUADS);
+
+            // set texture coordinates
+            
+
+
+            // set the vertices of each quad
+            for(Quad q : qs){
+                gl.glTexCoord2f(s.slice.left_top.x,     s.slice.left_top.y);
+                gl.glVertex2f(q.left_top.x,             q.left_top.y);
+                gl.glTexCoord2f(s.slice.left_bottom.x,  s.slice.left_bottom.y);
+                gl.glVertex2f(q.left_bottom.x,          q.left_bottom.y);
+                gl.glTexCoord2f(s.slice.right_bottom.x, s.slice.right_bottom.y);
+                gl.glVertex2f(q.right_bottom.x,         q.right_bottom.y);
+                gl.glTexCoord2f(s.slice.right_top.x,    s.slice.right_top.y);
+                gl.glVertex2f(q.right_top.x,            q.right_top.y);
+            }           
+
+        // Stop drawing quads
+        gl.glEnd();
+
+        // clear the texture buffer
+        gl.glBindTexture(GL2.GL_TEXTURE_2D, 0);
         gl.glFlush();
     }
 

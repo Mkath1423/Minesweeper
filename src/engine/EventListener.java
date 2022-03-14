@@ -21,7 +21,7 @@ public class EventListener implements GLEventListener{
         gl.glClearColor(0.5f, 1, 1, 1);
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
         
-        gameLoop.update(1);
+        //gameLoop.update(1);
         Drawer.draw(gl);    
     }
 
