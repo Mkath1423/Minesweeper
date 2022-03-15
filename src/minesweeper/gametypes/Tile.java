@@ -14,6 +14,7 @@ import engine.rendering.LayerKeys;
 import engine.rendering.geometry.Point;
 import engine.rendering.geometry.Quad;
 import engine.resourse.ImageResource;
+import engine.resourse.Sprite;
 import minesweeper.Constants.kTile;;
 
 public class Tile implements Drawable {
@@ -117,5 +118,38 @@ public class Tile implements Drawable {
     public void reshape(int x, int y, int w, int h) {
         // TODO Auto-generated method stub
         
+    }
+
+    @Override
+    public Sprite GetSprite() {
+        if(isFlagged){
+            // flag sprite
+            return ImageResource.getSprite("2000.png", 2);
+        }
+        else if(isHidden){
+            // hidden sprite
+            return ImageResource.getSprite("2000.png", 0);
+        }
+        else if(!isHidden && isBomb){
+            // bomb sprite
+            return ImageResource.getSprite("2000.png", 6);
+        }
+        else if(!isHidden && !isBomb && count == 0){
+            // empty sprite
+            return ImageResource.getSprite("2000.png", 1);
+        }
+        else if(!isHidden && !isBomb){
+            // number sprite
+            return ImageResource.getSprite("2000.png", 7 + count);
+        }
+        else {
+            return null;
+        }
+    }
+
+    @Override
+    public Quad GetQuad() {
+        // TODO Auto-generated method stub
+        return outline;
     }
 }

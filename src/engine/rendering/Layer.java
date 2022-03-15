@@ -1,9 +1,15 @@
 package engine.rendering;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
+
+import engine.rendering.geometry.Quad;
+import engine.resourse.Sprite;
 
 public class Layer {
 
@@ -30,10 +36,22 @@ public class Layer {
     }
 
     public void draw(GL2 gl){
-        // only called my the rendering engine
+        Map<Sprite, List<Quad>> toDraw = new HashMap<>();
+
+        // only called by the rendering engine
         //  draws the drawable to the gl frame
         for(Drawable d : layer){
-            d.draw(gl);
+            Sprite s = d.GetSprite();
+            Quad q = d.GetQuad();
+
+            if(!toDraw.containsKey(s)){
+                toDraw.put(s, new ArrayList<Quad>());
+            }
+            toDraw.get(s).add(q);
+        }
+
+        for (Entry<Sprite, List<Quad>> e : toDraw.entrySet()) {
+            Drawer.drawQuads(e.getValue(), e.getKey(), gl);
         }
     }
 

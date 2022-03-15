@@ -2,6 +2,9 @@ package engine.rendering;
 
 import com.jogamp.opengl.GL2;
 
+import engine.rendering.geometry.Quad;
+import engine.resourse.Sprite;
+
 public interface Drawable {
     
     /**
@@ -31,6 +34,9 @@ public interface Drawable {
      * 
      */
     public void dispose();
+
+    public Sprite GetSprite();
+    public Quad GetQuad();
 
     /**
      * Called when the window is resized
