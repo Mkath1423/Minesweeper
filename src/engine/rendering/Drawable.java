@@ -27,7 +27,7 @@ public interface Drawable {
      * 
      * @param gl the gl context to draw to
      */
-    public void draw(GL2 gl);
+    // public void draw(GL2 gl);
 
     /**
      * Called when the window is disposed 

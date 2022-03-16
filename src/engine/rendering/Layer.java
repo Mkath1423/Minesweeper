@@ -19,20 +19,20 @@ public class Layer {
         layer = new ArrayList<Drawable>();
     }
 
-    public int add(Drawable d){
+    public void add(Drawable d){
         // called by drawables to append themselves to the layer
+        d.init();
         System.out.println("added thing");
         layer.add(d);
-        return layer.size() - 1;
     }
 
     public void dispose(GLAutoDrawable gl){
         
     }
 
-    public void remove(int i){
+    public void remove(Drawable d){
         // called by drawables to remove themselves to the layer
-        layer.remove(i);
+        layer.remove(d);
     }
 
     public void draw(GL2 gl){

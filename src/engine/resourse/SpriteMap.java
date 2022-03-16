@@ -37,9 +37,8 @@ public class SpriteMap {
 
     public Sprite getSprite(int cell){
         if(cell >= cellsWide*cellsTall) return null;
-        if(cell <  0) return null;
-
-        if(!isSliced) return getSprite();
+        if(cell <  0                  ) return null;
+        if(!isSliced                  ) return getSprite();
         
         int x = cell % (int)cellsWide;
         int y = cell / (int)cellsWide;

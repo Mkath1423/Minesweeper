@@ -1,19 +1,31 @@
 package engine.components;
 
 import engine.rendering.LayerKeys;
+import engine.rendering.color.Color;
 import engine.rendering.geometry.Quad;
+
+import com.jogamp.opengl.GL2;
+
+import engine.exeptions.LayerDoesNotExist;
+import engine.rendering.Drawable;
+import engine.rendering.Drawer;
 import engine.resourse.Sprite;
 import engine.resourse.SpriteMap;
 
-public class Image {
+public class Image implements Drawable{
     public SpriteMap spriteMap;
     public int spriteIndex;
 
     public LayerKeys layer;
 
+    public Color color;
+
     public Transform transform;
 
     public boolean isFixed;
+    public boolean isSprite;
+    public boolean isVisible;
+
     private Quad boundingBox;
 
     public Image(SpriteMap _spriteMap, int _spriteIndex, LayerKeys _layer, Transform _transform){
@@ -30,6 +42,40 @@ public class Image {
         if(isFixed){
             this.boundingBox = transform.getQuad();
         }
+    }
+
+    @Override
+    public void init() {
+        try {
+            Drawer.Frame(layer).add(this);
+        } catch (LayerDoesNotExist e) {
+            System.out.println("Could not initialize drawable: " + e.toString());
+        }
+    }
+
+    @Override
+    public void dispose() {
+        try {
+            Drawer.Frame(layer).remove(this);
+        } catch (LayerDoesNotExist e) {
+            System.out.println("Could not remove drawable: " + e.toString());
+        }
+    }
+
+    @Override
+    public Sprite GetSprite() {
+        return spriteMap.getSprite(spriteIndex);
+    }
+
+    @Override
+    public Quad GetQuad() {
+        return transform.getQuad();
+    }
+
+    @Override
+    public void reshape(int x, int y, int w, int h) {
+        // TODO Auto-generated method stub
+        
     }
 
 

@@ -30,7 +30,6 @@ public class Tile implements Drawable {
     public boolean isFlagged;
     public int count;
 
-    public int index;
     public LayerKeys layer;
 
     public Tile(float _x, float _y, float _l){
@@ -57,28 +56,28 @@ public class Tile implements Drawable {
         this(point.x, point.y, l);
     }
 
-    public void draw(GL2 gl){
-        if(isFlagged){
-            // flag sprite
-            Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 2), gl);
-        }
-        else if(isHidden){
-            // hidden sprite
-            Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 0), gl);
-        }
-        else if(!isHidden && isBomb){
-            // bomb sprite
-            Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 6), gl);
-        }
-        else if(!isHidden && !isBomb && count == 0){
-            // empty sprite
-            Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 1), gl);
-        }
-        else if(!isHidden && !isBomb){
-            // number sprite
-            Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 7 + count), gl);
-        }
-    }
+    // public void draw(GL2 gl){
+    //     if(isFlagged){
+    //         // flag sprite
+    //         Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 2), gl);
+    //     }
+    //     else if(isHidden){
+    //         // hidden sprite
+    //         Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 0), gl);
+    //     }
+    //     else if(!isHidden && isBomb){
+    //         // bomb sprite
+    //         Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 6), gl);
+    //     }
+    //     else if(!isHidden && !isBomb && count == 0){
+    //         // empty sprite
+    //         Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 1), gl);
+    //     }
+    //     else if(!isHidden && !isBomb){
+    //         // number sprite
+    //         Drawer.drawQuad(outline, ImageResource.getSprite("2000.png", 7 + count), gl);
+    //     }
+    // }
 
     public void onMouseClicked(MouseEvent e){
         if(Collisions.RectPoint(outline, new Point(e.getX(), e.getY()))){
@@ -95,7 +94,7 @@ public class Tile implements Drawable {
     @Override
     public void init() {
         try{
-            index = Drawer.Frame(LayerKeys.MIDGROUND).add(this);
+            Drawer.Frame(LayerKeys.MIDGROUND).add(this);
         }
         catch(LayerDoesNotExist e){
             System.out.println(e);
