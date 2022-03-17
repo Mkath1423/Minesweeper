@@ -1,11 +1,11 @@
 package engine.physics2D.collisions;
 
 public class Vector2 {
-    public int x;
-    public int y;
+    public float x;
+    public float y;
 
-    public Vector2(int x, int y){
-        this.x = x;
-        this.y = y;
+    public Vector2(float _x, float _y){
+        this.x = _x;
+        this.y = _y;
     }
 }

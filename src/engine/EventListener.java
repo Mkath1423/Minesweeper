@@ -40,8 +40,10 @@ public class EventListener implements GLEventListener{
         gl.glClearColor(0.5f, 1, 1, 1);
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);        
         
-        gameLoop.init();
+        
         gameLoop.loadTextures();
+        gameLoop.init();
+        
         System.out.println("finished init");
     }
 

@@ -28,7 +28,7 @@ public class ImageResource  {
         // load the image from the file
         try {
             image = ImageIO.read(url); 
-            image.flush(); // Apperently this fixes a potencial memory leak
+            image.flush(); // Apparently this fixes a potential memory leak
             
             // generate the texture
             Texture texture = AWTTextureIO.newTexture(Renderer.getProfile(), image, false);
@@ -48,7 +48,7 @@ public class ImageResource  {
         // load the image from the file
         try {
             image = ImageIO.read(url); 
-            image.flush(); // Apperently this fixes a potencial memory leak
+            image.flush(); // Apparently this fixes a potential memory leak
 
             // generate the texture
             Texture texture = AWTTextureIO.newTexture(Renderer.getProfile(), image, true);
@@ -60,6 +60,18 @@ public class ImageResource  {
             e.printStackTrace();
         }
     }
+
+    public static SpriteMap getSpriteMap(String path){
+        URL url = generateURl(path);
+        
+        // return the texture if it exists
+        if(textures.containsKey(url)){
+            return textures.get(url);
+        }
+        
+        return null;
+    }
+
 
     public static Sprite getSprite(String path){
         URL url = generateURl(path);

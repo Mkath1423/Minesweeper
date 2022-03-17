@@ -13,7 +13,8 @@ public class SceneManager {
     }
 
     public static void AddScene(String sceneName, Scene scene){
-        if(activeScene.equals(null)) return;
+        System.out.println("Adding scene: " + sceneName);
+        if(scene == null) return;
 
         if(!scenes.containsKey(sceneName)){
             scene.Awake();
@@ -24,13 +25,13 @@ public class SceneManager {
     public static void StartScene(String sceneName){
         if(!scenes.containsKey(sceneName)) return;
         
-        if(!activeScene.equals(null)){
+        if(activeScene != null){
             activeScene.End();
         }
 
         activeScene = scenes.get(sceneName);
         
-        if(!activeScene.equals(null)){
+        if(activeScene != null){
             activeScene.Start();
         }
     }

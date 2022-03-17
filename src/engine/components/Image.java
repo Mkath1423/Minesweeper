@@ -9,6 +9,7 @@ import com.jogamp.opengl.GL2;
 import engine.exeptions.LayerDoesNotExist;
 import engine.rendering.Drawable;
 import engine.rendering.Drawer;
+import engine.resourse.ImageResource;
 import engine.resourse.Sprite;
 import engine.resourse.SpriteMap;
 
@@ -42,15 +43,17 @@ public class Image implements Drawable{
         if(isFixed){
             this.boundingBox = transform.getQuad();
         }
+
+        try {
+            Drawer.Frame(layer).add(this);
+        } catch (LayerDoesNotExist e) {
+            System.out.println("Image could not be initialized. LayerDoesNotExist.");
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void init() {
-        try {
-            Drawer.Frame(layer).add(this);
-        } catch (LayerDoesNotExist e) {
-            System.out.println("Could not initialize drawable: " + e.toString());
-        }
     }
 
     @Override

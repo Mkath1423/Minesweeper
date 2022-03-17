@@ -20,9 +20,8 @@ public class Layer {
     }
 
     public void add(Drawable d){
-        // called by drawables to append themselves to the layer
+        // called by drawable to append themselves to the layer
         d.init();
-        System.out.println("added thing");
         layer.add(d);
     }
 
