@@ -107,4 +107,17 @@ public class Quad {
     public String toString(){
         return String.format("Quad(lt:%s, lb:%s, rb:%s, rt:%s)", left_top.toString(), left_bottom.toString(), right_bottom.toString(), right_top.toString());
     }
+
+    @Override
+    public boolean equals(Object o){
+        if(o == null || o.getClass() != this.getClass()) return false;
+        if(o == this) return true;
+
+        Quad that = (Quad)o;
+        
+        return this.left_top     == that.left_top     &&
+               this.left_bottom  == that.left_bottom  &&
+               this.right_bottom == that.right_bottom &&
+               this.right_top    == that.right_top;
+    } 
 }

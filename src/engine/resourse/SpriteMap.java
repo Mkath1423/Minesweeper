@@ -1,11 +1,14 @@
 package engine.resourse;
 
+import java.net.URL;
+
 import com.jogamp.opengl.util.texture.Texture;
 
 import engine.rendering.geometry.Quad;
 
 public class SpriteMap {
     Texture texture = null;
+    URL url;
 
     public boolean isSliced = false;
 
@@ -15,7 +18,7 @@ public class SpriteMap {
     public float cellWidth = 0;
     public float cellHeight = 0;
 
-    public SpriteMap(Texture texture, float cellsWide, float cellsTall){
+    public SpriteMap(Texture texture, URL url, float cellsWide, float cellsTall){
         this.cellsWide = cellsWide;
         this.cellsTall = cellsTall;
 
@@ -25,14 +28,16 @@ public class SpriteMap {
         this.isSliced = true;
 
         this.texture = texture;
+        this.url = url;
     }
 
-    public SpriteMap(Texture texture){
+    public SpriteMap(Texture texture, URL url){
         this.texture = texture;
+        this.url = url;
     }
 
     public Sprite getSprite(){
-        return new Sprite(texture);
+        return new Sprite(texture, url);
     }
 
     public Sprite getSprite(int cell){
@@ -43,6 +48,6 @@ public class SpriteMap {
         int x = cell % (int)cellsWide;
         int y = cell / (int)cellsWide;
         
-        return new Sprite(texture, Quad.Rectangle(x*cellWidth, y*cellHeight, cellWidth, cellHeight));
+        return new Sprite(texture, url, Quad.Rectangle(x*cellWidth, y*cellHeight, cellWidth, cellHeight));
     }
 }

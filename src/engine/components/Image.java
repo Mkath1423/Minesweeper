@@ -4,8 +4,6 @@ import engine.rendering.LayerKeys;
 import engine.rendering.color.Color;
 import engine.rendering.geometry.Quad;
 
-import com.jogamp.opengl.GL2;
-
 import engine.exeptions.LayerDoesNotExist;
 import engine.rendering.Drawable;
 import engine.rendering.Drawer;
@@ -72,6 +70,7 @@ public class Image implements Drawable{
 
     @Override
     public Quad GetQuad() {
+        if(isFixed) return boundingBox;
         return transform.getQuad();
     }
 

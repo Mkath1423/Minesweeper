@@ -34,7 +34,7 @@ public class ImageResource  {
             Texture texture = AWTTextureIO.newTexture(Renderer.getProfile(), image, false);
 
             // construct the spritemap object and store it
-            textures.put(url, new SpriteMap(texture));
+            textures.put(url, new SpriteMap(texture, url));
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -54,7 +54,7 @@ public class ImageResource  {
             Texture texture = AWTTextureIO.newTexture(Renderer.getProfile(), image, true);
 
             // construct the spritemap object and store it
-            textures.put(url, new SpriteMap(texture, cellsWide, cellsTall));
+            textures.put(url, new SpriteMap(texture, url, cellsWide, cellsTall));
             
         } catch (IOException e) {
             e.printStackTrace();

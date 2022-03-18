@@ -32,8 +32,8 @@ public final class Constants {
     }
 
     public static final class kGame{
-        public static int xSize =  10;
-        public static int ySize = 15;
+        public static int xSize = 64;
+        public static int ySize = 32;
 
         public static final double easyBombsAmount = 0.1;
         public static final double mediumBombsAmount = 0.2;

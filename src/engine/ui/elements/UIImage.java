@@ -1,5 +1,5 @@
 package engine.ui.elements;
 
-public class Image {
+public class UIImage {
     
 }

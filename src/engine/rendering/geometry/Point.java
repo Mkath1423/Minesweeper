@@ -33,4 +33,15 @@ public class Point {
     public String toString() {
         return String.format("(%s, %s)", x, y);
     }
+
+    @Override
+    public boolean equals(Object o){
+        if(o == null || o.getClass() != this.getClass()) return false;
+        if(o == this) return true;
+
+        Point that = (Point)o;
+        
+        return this.x  == that.x &&
+               this.y  == that.y;
+    }
 }

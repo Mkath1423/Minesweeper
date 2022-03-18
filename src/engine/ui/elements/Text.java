@@ -1,5 +1,54 @@
 package engine.ui.elements;
 
-public class Text {
+import engine.components.GameObject;
+import engine.components.Transform;
+import engine.rendering.Drawable;
+import engine.rendering.geometry.Quad;
+import engine.resourse.Sprite;
+import engine.resourse.SpriteMap;
+
+public class Text extends GameObject implements Drawable{
+
+    public String text = "";
+
+    public Transform transform;
+
+    public SpriteMap font;
+
+    public Text(Transform transform, SpriteMap font, String text){
+        this.transform = transform;
+        this.font      = font;
+        this.text      = text;
+    }
+
+    @Override
+    public void init() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void dispose() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public Sprite GetSprite() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Quad GetQuad() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public void reshape(int x, int y, int w, int h) {
+        // TODO Auto-generated method stub
+        
+    }
     
 }

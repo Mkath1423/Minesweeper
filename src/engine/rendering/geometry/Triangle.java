@@ -25,5 +25,17 @@ public class Triangle {
         this.B = B;
         this.C = C;
     }
+
+    @Override
+    public boolean equals(Object o){
+        if(o == null || o.getClass() != this.getClass()) return false;
+        if(o == this) return true;
+
+        Triangle that = (Triangle)o;
+        
+        return this.A == that.A  &&
+               this.B == that.B  &&
+               this.C == that.C;
+    } 
     
 }
