@@ -29,6 +29,8 @@ public class SceneManager {
             activeScene.End();
         }
 
+        System.out.println("Starting scene: " + sceneName);
+
         activeScene = scenes.get(sceneName);
         
         if(activeScene != null){

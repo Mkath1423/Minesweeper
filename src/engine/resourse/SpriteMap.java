@@ -10,13 +10,13 @@ public class SpriteMap {
     Texture texture = null;
     URL url;
 
-    public boolean isSliced = false;
+    public boolean isSliced;
 
-    public float cellsWide = 0;
-    public float cellsTall = 0;
+    public float cellsWide;
+    public float cellsTall;
 
-    public float cellWidth = 0;
-    public float cellHeight = 0;
+    public float cellWidth;
+    public float cellHeight;
 
     public SpriteMap(Texture texture, URL url, float cellsWide, float cellsTall){
         this.cellsWide = cellsWide;
@@ -34,6 +34,14 @@ public class SpriteMap {
     public SpriteMap(Texture texture, URL url){
         this.texture = texture;
         this.url = url;
+        
+        this.isSliced = false;
+
+        this.cellsWide = 0;
+        this.cellsTall = 0;
+
+        this.cellWidth = 0;
+        this.cellHeight = 0;
     }
 
     public Sprite getSprite(){
@@ -41,9 +49,9 @@ public class SpriteMap {
     }
 
     public Sprite getSprite(int cell){
+        if(!isSliced                  ) return getSprite();
         if(cell >= cellsWide*cellsTall) return null;
         if(cell <  0                  ) return null;
-        if(!isSliced                  ) return getSprite();
         
         int x = cell % (int)cellsWide;
         int y = cell / (int)cellsWide;

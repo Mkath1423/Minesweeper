@@ -32,7 +32,7 @@ public class TileGO extends GameObject{
         transform = new Transform(position, 0f, new Vector2(kTile.length, kTile.length), PositionMode.LEFT_TOP);
 
         image     = new Image(ImageResource.getSpriteMap("2000.png"), 0, LayerKeys.MIDGROUND, transform);
-        MouseInput.register(MouseInputKeys.CLICKED, this::onMouseClicked);
+        MouseInput.register(MouseInputKeys.CLICKED, (e) -> {if(isActive) this.onMouseClicked(e);});
 
         isBomb = false;
         isHidden = true;
@@ -42,6 +42,8 @@ public class TileGO extends GameObject{
 
     @Override
     public void Start() {
+        image.Start();
+
         image.spriteIndex = 0; 
     }
 
@@ -56,11 +58,16 @@ public class TileGO extends GameObject{
             else if(e.getButton() == 1 && !isFlagged){
                 isHidden =  false;
 
-                if(isBomb)               image.spriteIndex = kTile.BOMB_CLICKED;
+                if(isBomb)          image.spriteIndex = kTile.BOMB_CLICKED;
                 else if(count == 0) image.spriteIndex = kTile.EMPTY;
-                else                     image.spriteIndex = kTile.COUNT_IMAGES[count];
+                else                image.spriteIndex = kTile.COUNT_IMAGES[count];
             }
         }
     } 
+
+    @Override
+    public void End(){
+        image.End();
+    }
 
 }

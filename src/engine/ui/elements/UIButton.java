@@ -41,20 +41,32 @@ public class UIButton<ReturnType> extends GameObject{
         transform = t;
         image = new Image(defaultImage, 0, LayerKeys.UI, transform);
     
-        MouseInput.register(MouseInputKeys.PRESSED,    this::OnMousePressed);
-        MouseInput.register(MouseInputKeys.PRESSED,    this::OnMouseReleased);
-        MouseInput.register(MouseInputKeys.MOUSEMOVED, this::OnMouseMoved);
+        MouseInput.register(MouseInputKeys.PRESSED,    (e) -> {if(isActive) this.OnMousePressed(e);});
+        MouseInput.register(MouseInputKeys.RELEASED,   (e) -> {if(isActive) this.OnMouseReleased(e);});
+        MouseInput.register(MouseInputKeys.MOUSEMOVED, (e) -> {if(isActive) this.OnMouseMoved(e);});
+    }
+
+    @Override
+    public void Start(){
+        image.Start();
+        System.out.println(image.GetSprite());
+    }
+
+
+    @Override
+    public void End(){
+        image.End();
     }
 
     public void OnMousePressed(MouseEvent e){
-        if(Collisions.QuadPoint(transform.getQuad(), new Point(e.getX(), e.getY()))){
+        if(Collisions.RectPoint(transform.getQuad(), new Point(e.getX(), e.getY()))){
             image.spriteMap = mousePressedImage;
             buttonPressed = true;
         }
     }
 
     public void OnMouseReleased(MouseEvent e){
-        if(buttonPressed && Collisions.QuadPoint(transform.getQuad(), new Point(e.getX(), e.getY()))){
+        if(buttonPressed && Collisions.RectPoint(transform.getQuad(), new Point(e.getX(), e.getY()))){
             event.invoke(returnData);
         }
 
@@ -63,7 +75,7 @@ public class UIButton<ReturnType> extends GameObject{
     }
 
     public void OnMouseMoved(MouseEvent e){
-        if(!buttonPressed && Collisions.QuadPoint(transform.getQuad(), new Point(e.getX(), e.getY()))){
+        if(!buttonPressed && Collisions.RectPoint(transform.getQuad(), new Point(e.getX(), e.getY()))){
             image.spriteMap = mouseHoveringImage;
         }
         else{

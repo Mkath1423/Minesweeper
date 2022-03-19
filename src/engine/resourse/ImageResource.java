@@ -39,6 +39,8 @@ public class ImageResource  {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        System.out.println("loaded texture " + url.toString() );
     }
 
     public static void loadImage(String path, float cellsWide, float cellsTall){

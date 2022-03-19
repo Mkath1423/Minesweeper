@@ -22,6 +22,7 @@ import minesweeper.gametypes.TileGO;
 public class Game implements GameLoop{
 
     public static void main(String[] args){
+        System.out.println("Game.main()");
         Renderer.init();
     }
 
@@ -37,7 +38,7 @@ public class Game implements GameLoop{
     @Override
     public void init() {
 
-        System.out.println();
+        System.out.println("GameLoop.init()");
 
         // Initialize Tile GameObjects
         Point initialPosition = new Point(0f, 0f);
@@ -105,9 +106,10 @@ public class Game implements GameLoop{
                                                                                    0f, 
                                                                                new Vector2(128f, 64f), 
                                                                                    PositionMode.LEFT_TOP), 
-                                                                     ImageResource.getSpriteMap("StartDefault.png"), 
-                                                                     ImageResource.getSpriteMap("StartPressed.png"), 
-                                                                     ImageResource.getSpriteMap("DefaultHovering.png"));
+                                                                     ImageResource.getSpriteMap("Button1Default.png"), 
+                                                                     ImageResource.getSpriteMap("Button1Pressed.png"), 
+                                                                     ImageResource.getSpriteMap("Button1Hovering.png"));
+
 
         startButton.event.registerListener((i) -> {
             SceneManager.StartScene("game");
@@ -133,8 +135,8 @@ public class Game implements GameLoop{
         endScreen = new Scene();
 
         // Add Scenes to Manager and start initial scene
-        SceneManager.AddScene("game", gameScreen);
         SceneManager.AddScene("home", homeScreen);
+        SceneManager.AddScene("game", gameScreen);
         SceneManager.AddScene("end", endScreen);
 
         SceneManager.StartScene("home");
@@ -155,12 +157,15 @@ public class Game implements GameLoop{
 
     @Override
     public void loadTextures() {
+        System.out.println("GameLoop.LoadTextures()");
+
         ImageResource.loadImage("2000.png", 8, 2);
         ImageResource.loadImage("font.png", 9, 8);
 
-        ImageResource.loadImage("StartDefault.png");
-        ImageResource.loadImage("StartPressed.png");
-        ImageResource.loadImage("DefaultHovering.png");
+        ImageResource.loadImage("Button1Default.png");
+        ImageResource.loadImage("Button1Pressed.png");
+        ImageResource.loadImage("Button1Hovering.png");
+
     }
     
 }

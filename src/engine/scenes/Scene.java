@@ -34,6 +34,7 @@ public class Scene {
     public void Start(){
         for (GameObject gameObject : gameObjects) {
             gameObject.Start();
+            gameObject.isActive = true;
         }
     }
 
@@ -46,6 +47,7 @@ public class Scene {
     public void End(){
         for (GameObject gameObject : gameObjects) {
             gameObject.End();
+            gameObject.isActive = false;
         }
     }
 }

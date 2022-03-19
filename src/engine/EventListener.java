@@ -15,6 +15,7 @@ public class EventListener implements GLEventListener{
 
     @Override
     public void display(GLAutoDrawable drawable) {
+        
         GL2 gl = drawable.getGL().getGL2();
 
         // Clear the screen

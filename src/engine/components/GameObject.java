@@ -1,7 +1,10 @@
 package engine.components;
 
 public abstract class GameObject {
-    // !! Do not call these methods manually, the SceneManager will handle that.
+    
+    public boolean isActive = false;
+
+    // !! No need to call these methods manually, the SceneManager will handle that.
 
     // Called when GO is added to a scene
     //    Use this for first time only initializations

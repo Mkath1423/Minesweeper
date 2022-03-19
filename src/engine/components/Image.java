@@ -41,7 +41,9 @@ public class Image implements Drawable{
         if(isFixed){
             this.boundingBox = transform.getQuad();
         }
+    }
 
+    public void Start(){
         try {
             Drawer.Frame(layer).add(this);
         } catch (LayerDoesNotExist e) {
@@ -49,6 +51,16 @@ public class Image implements Drawable{
             e.printStackTrace();
         }
     }
+
+    public void End(){
+        try {
+            Drawer.Frame(layer).remove(this);
+        } catch (LayerDoesNotExist e) {
+            System.out.println("Image could not be removed. LayerDoesNotExist.");
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public void init() {
