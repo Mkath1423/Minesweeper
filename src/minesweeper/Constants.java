@@ -15,7 +15,7 @@ public final class Constants {
         public static int UNCHECKED = 0;
         public static int EMPTY = 1;
         public static int FLAGGED = 2;
-        public static int BOMB_FOUND = 5;
+        public static int BOMB_NOT_FOUND = 5;
         public static int BOMB_CLICKED = 6;
         public static int NOT_BOMB = 7;
         public static int ONE = 8;

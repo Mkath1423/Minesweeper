@@ -7,7 +7,7 @@ import engine.components.GameObject;
 import minesweeper.Game;
 
 public class Scene {
-    private List<GameObject> gameObjects;
+    protected List<GameObject> gameObjects;
 
     public Scene(){
         gameObjects = new ArrayList<>();

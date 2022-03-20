@@ -41,6 +41,8 @@ public class UIButton<ReturnType> extends GameObject{
         transform = t;
         image = new Image(defaultImage, 0, LayerKeys.UI, transform);
     
+        returnData = data;
+
         MouseInput.register(MouseInputKeys.PRESSED,    (e) -> {if(isActive) this.OnMousePressed(e);});
         MouseInput.register(MouseInputKeys.RELEASED,   (e) -> {if(isActive) this.OnMouseReleased(e);});
         MouseInput.register(MouseInputKeys.MOUSEMOVED, (e) -> {if(isActive) this.OnMouseMoved(e);});
@@ -49,7 +51,6 @@ public class UIButton<ReturnType> extends GameObject{
     @Override
     public void Start(){
         image.Start();
-        System.out.println(image.GetSprite());
     }
 
 

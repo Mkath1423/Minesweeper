@@ -19,6 +19,8 @@ public class Renderer
 
     private static GLProfile profile = null;
 
+    private static FPSAnimator animator = null;
+
     public static void init(){
         GLProfile.initSingleton();
         profile = GLProfile.get(GLProfile.GL2);
@@ -32,7 +34,7 @@ public class Renderer
         window.addKeyListener(new KeyInputCaller());
         
 
-        FPSAnimator animator = new FPSAnimator(window, 130);
+        animator = new FPSAnimator(window, 130);
         animator.start();
    
         window.setVisible(true);
@@ -41,11 +43,15 @@ public class Renderer
         window.addWindowListener(new WindowAdapter() {
             @Override
             public void windowDestroyed(WindowEvent e) {
-                animator.stop();
-                System.exit(1);
+                ExitProgram();
             }
         });
         
+    }
+
+    public static void ExitProgram(){
+        animator.stop();
+        System.exit(1);
     }
 
     public static GLProfile getProfile(){

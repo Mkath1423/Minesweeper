@@ -12,12 +12,15 @@ public class Event<T>{
     }
 
     public void registerListener(Consumer<T> callback){
+        if(callback == null) return;
         listeners.add(callback);
     }
 
     public void invoke(T data){
         for (Consumer<T> consumer : listeners) {
-            consumer.accept(data);
+            if(consumer != null){
+                consumer.accept(data);
+            }
         }
     }
 }

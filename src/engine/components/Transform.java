@@ -33,6 +33,8 @@ public class Transform {
         this.rotation = rotation;
         this.scale    = scale;
         this.positionMode = positionMode;
+
+        CalculateTruePosition();
     }
 
     public Transform(){
@@ -56,54 +58,52 @@ public class Transform {
                  PositionMode.LEFT_TOP);
     }
 
-
-
-    // Methods
-
-    public Quad getQuad(){
-        Vector2 transformedPosition = position;
-
+    private void CalculateTruePosition(){
         switch(positionMode){
             case LEFT_TOP:
                 break;
 
             case LEFT_CENTER:
-                transformedPosition.y -= scale.y / 2;
+                position.y -= scale.y / 2;
                 break;
         
             case LEFT_BOTTOM:
-                transformedPosition.y -= scale.y;
+                position.y -= scale.y;
                 break;
     
             case MIDDLE_TOP:
-                transformedPosition.x -= scale.x / 2;
+                position.x -= scale.x / 2;
                 break;
     
             case MIDDLE_CENTER:
-                transformedPosition.x -= scale.x / 2;
-                transformedPosition.y -= scale.y / 2;
+                position.x -= scale.x / 2;
+                position.y -= scale.y / 2;
                 break;
     
             case MIDDLE_BOTTOM:
-                transformedPosition.x -= scale.x / 2;
-                transformedPosition.y -= scale.y;
+                position.x -= scale.x / 2;
+                position.y -= scale.y;
                 break;
     
             case RIGHT_TOP:
-                transformedPosition.x -= scale.x;
+                position.x -= scale.x;
                 break;
     
             case RIGHT_CENTER:
-                transformedPosition.x -= scale.x;
-                transformedPosition.y -= scale.y / 2;
+                position.x -= scale.x;
+                position.y -= scale.y / 2;
                 break;
     
             case RIGHT_BOTTOM:
-                transformedPosition.x -= scale.x;
-                transformedPosition.y -= scale.y;
+                position.x -= scale.x;
+                position.y -= scale.y;
                 break;
         }
+    }
 
-        return Quad.Rectangle(transformedPosition.x, transformedPosition.y, scale.x, scale.y);
+    // Methods
+
+    public Quad getQuad(){
+        return Quad.Rectangle(position.x, position.y, scale.x, scale.y);
     }
 }
