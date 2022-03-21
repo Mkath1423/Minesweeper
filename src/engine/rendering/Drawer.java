@@ -9,7 +9,7 @@ import com.jogamp.opengl.GL2;
 import engine.exeptions.LayerDoesNotExist;
 import engine.rendering.color.Color;
 import engine.rendering.geometry.Quad;
-import engine.resourse.Sprite;
+import engine.resource.Sprite;
 
 /**
  * A static drawer class
@@ -50,8 +50,8 @@ public class Drawer{
             frame.put(layer, new Layer());
         }
     }
-
-  /** 
+ 
+    /** 
      * Invokes the draw method for all registered drawables
      * 
      * Layers are drawn in correct order for proper layering.
@@ -86,8 +86,10 @@ public class Drawer{
      * @param gl the gl context
      */
     public static void drawQuad(Quad q, GL2 gl){
+        // set drawing mode
         gl.glBegin(GL2.GL_QUADS);
 
+        // Set vertices
         gl.glVertex2f(q.left_top.x,     q.left_top.y);
         gl.glVertex2f(q.left_bottom.x,  q.left_bottom.y);
         gl.glVertex2f(q.right_bottom.x, q.right_bottom.y);

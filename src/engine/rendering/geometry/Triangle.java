@@ -26,6 +26,11 @@ public class Triangle {
         this.C = C;
     }
 
+    /**
+     * Checks if a triangle is equal to this
+     * 
+     * @return true if the vertexes are the same
+     */
     @Override
     public boolean equals(Object o){
         if(o == null || o.getClass() != this.getClass()) return false;

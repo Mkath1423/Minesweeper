@@ -1,0 +1,190 @@
+Date : 2022-03-20 21:02:17
+Directory : d:\GitRepos\JOGL-Engine-2
+Total : 111 files,  12 codes, 719 comments, 209 blanks, all 940 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Java     |        109 |         12 |        719 |        209 |        940 |
+| Markdown |          2 |          0 |          0 |          0 |          0 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                       | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                          |        111 |         12 |        719 |        209 |        940 |
+| ..                                                                         |         71 |     -1,439 |        -37 |       -343 |     -1,819 |
+| ..\JOGL-Engine                                                             |         71 |     -1,439 |        -37 |       -343 |     -1,819 |
+| ..\JOGL-Engine\bin                                                         |         36 |       -536 |          0 |         -2 |       -538 |
+| ..\JOGL-Engine\bin\engine                                                  |         29 |       -426 |          0 |         -1 |       -427 |
+| ..\JOGL-Engine\bin\engine\Inputs                                           |          6 |       -122 |          0 |          0 |       -122 |
+| ..\JOGL-Engine\bin\engine\events                                           |          1 |         -5 |          0 |          0 |         -5 |
+| ..\JOGL-Engine\bin\engine\exeptions                                        |          2 |        -12 |          0 |          0 |        -12 |
+| ..\JOGL-Engine\bin\engine\physics2D                                        |          2 |        -28 |          0 |          0 |        -28 |
+| ..\JOGL-Engine\bin\engine\physics2D\collisions                             |          2 |        -28 |          0 |          0 |        -28 |
+| ..\JOGL-Engine\bin\engine\rendering                                        |          9 |       -156 |          0 |         -1 |       -157 |
+| ..\JOGL-Engine\bin\engine\rendering\color                                  |          1 |        -14 |          0 |          0 |        -14 |
+| ..\JOGL-Engine\bin\engine\rendering\geometry                               |          3 |        -39 |          0 |          0 |        -39 |
+| ..\JOGL-Engine\bin\engine\resourse                                         |          3 |        -60 |          0 |          0 |        -60 |
+| ..\JOGL-Engine\bin\engine\ui                                               |          4 |        -21 |          0 |          0 |        -21 |
+| ..\JOGL-Engine\bin\engine\ui\elements                                      |          3 |        -16 |          0 |          0 |        -16 |
+| ..\JOGL-Engine\bin\engine\ui\layouts                                       |          1 |         -5 |          0 |          0 |         -5 |
+| ..\JOGL-Engine\bin\minesweeper                                             |          7 |       -110 |          0 |         -1 |       -111 |
+| ..\JOGL-Engine\bin\minesweeper\gametypes                                   |          1 |        -30 |          0 |          0 |        -30 |
+| ..\JOGL-Engine\bin\minesweeper\util                                        |          1 |        -18 |          0 |          0 |        -18 |
+| ..\JOGL-Engine\src                                                         |         34 |       -897 |        -37 |       -339 |     -1,273 |
+| ..\JOGL-Engine\src\engine                                                  |         29 |       -688 |        -27 |       -263 |       -978 |
+| ..\JOGL-Engine\src\engine\Inputs                                           |          6 |       -172 |         -2 |        -56 |       -230 |
+| ..\JOGL-Engine\src\engine\events                                           |          1 |         -8 |          0 |         -3 |        -11 |
+| ..\JOGL-Engine\src\engine\exeptions                                        |          2 |        -12 |          0 |         -4 |        -16 |
+| ..\JOGL-Engine\src\engine\physics2D                                        |          2 |        -64 |          0 |        -11 |        -75 |
+| ..\JOGL-Engine\src\engine\physics2D\collisions                             |          2 |        -64 |          0 |        -11 |        -75 |
+| ..\JOGL-Engine\src\engine\rendering                                        |          9 |       -264 |        -15 |       -108 |       -387 |
+| ..\JOGL-Engine\src\engine\rendering\color                                  |          1 |        -27 |          0 |         -8 |        -35 |
+| ..\JOGL-Engine\src\engine\rendering\geometry                               |          3 |        -89 |         -4 |        -32 |       -125 |
+| ..\JOGL-Engine\src\engine\resourse                                         |          3 |       -105 |         -9 |        -49 |       -163 |
+| ..\JOGL-Engine\src\engine\ui                                               |          4 |        -12 |          0 |        -12 |        -24 |
+| ..\JOGL-Engine\src\engine\ui\elements                                      |          3 |         -9 |          0 |         -9 |        -18 |
+| ..\JOGL-Engine\src\engine\ui\layouts                                       |          1 |         -3 |          0 |         -3 |         -6 |
+| ..\JOGL-Engine\src\minesweeper                                             |          5 |       -209 |        -10 |        -76 |       -295 |
+| ..\JOGL-Engine\src\minesweeper\gametypes                                   |          1 |        -96 |         -8 |        -21 |       -125 |
+| ..\JOGL-Engine\src\minesweeper\util                                        |          1 |        -17 |          0 |        -10 |        -27 |
+| src                                                                        |         39 |      1,445 |        756 |        550 |      2,751 |
+| src\engine                                                                 |         35 |      1,080 |        662 |        432 |      2,174 |
+| src\engine\Inputs                                                          |          6 |        169 |         92 |         61 |        322 |
+| src\engine\components                                                      |          4 |        175 |        151 |         64 |        390 |
+| src\engine\exeptions                                                       |          2 |         12 |          0 |          4 |         16 |
+| src\engine\physics2D                                                       |          3 |         73 |         67 |         17 |        157 |
+| src\engine\physics2D\collisions                                            |          3 |         73 |         67 |         17 |        157 |
+| src\engine\rendering                                                       |          9 |        300 |        296 |        136 |        732 |
+| src\engine\rendering\color                                                 |          1 |         27 |         33 |         10 |         70 |
+| src\engine\rendering\geometry                                              |          3 |         92 |        100 |         32 |        224 |
+| src\engine\resourse                                                        |          3 |        131 |         10 |         58 |        199 |
+| src\engine\scenes                                                          |          2 |         71 |          0 |         24 |         95 |
+| src\engine\ui                                                              |          4 |        100 |         44 |         45 |        189 |
+| src\engine\ui\elements                                                     |          3 |         97 |         44 |         42 |        183 |
+| src\engine\ui\layouts                                                      |          1 |          3 |          0 |          3 |          6 |
+| src\minesweeper                                                            |          4 |        365 |         94 |        118 |        577 |
+| src\minesweeper\gametypes                                                  |          1 |         90 |         27 |         28 |        145 |
+| src\minesweeper\scenetypes                                                 |          1 |        152 |         41 |         51 |        244 |
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                   | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| d:\GitRepos\JOGL-Engine-2\README.md                                        | Markdown |          6 |          0 |          2 |          8 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\EventListener.java                    | Java     |         42 |          2 |         21 |         65 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\GameLoop.java                         | Java     |          7 |          0 |          2 |          9 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\KeyInput.java                  | Java     |         30 |         25 |         16 |         71 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\KeyInputCaller.java            | Java     |         13 |          6 |          6 |         25 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\KeyInputKeys.java              | Java     |         47 |         13 |         11 |         71 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\MouseInput.java                | Java     |         31 |         24 |         13 |         68 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\MouseInputCaller.java          | Java     |         37 |         24 |         13 |         74 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\MouseInputKeys.java            | Java     |         11 |          0 |          2 |         13 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\components\Event.java                 | Java     |         21 |         24 |          7 |         52 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\components\GameObject.java            | Java     |          8 |         17 |          8 |         33 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\components\Image.java                 | Java     |         64 |         64 |         24 |        152 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\components\Transform.java             | Java     |         82 |         46 |         25 |        153 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\exeptions\DrawableNotInitialized.java | Java     |          6 |          0 |          2 |          8 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\exeptions\LayerDoesNotExist.java      | Java     |          6 |          0 |          2 |          8 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\physics2D\collisions\Area.java        | Java     |         46 |         35 |          9 |         90 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\physics2D\collisions\Collisions.java  | Java     |         18 |         25 |          5 |         48 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\physics2D\collisions\Vector2.java     | Java     |          9 |          7 |          3 |         19 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\Drawable.java               | Java     |         10 |         46 |         10 |         66 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\Drawer.java                 | Java     |         79 |         69 |         51 |        199 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\Layer.java                  | Java     |         39 |         33 |         15 |         87 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\LayerKeys.java              | Java     |          8 |          0 |          2 |         10 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\Renderer.java               | Java     |         45 |         15 |         16 |         76 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\color\Color.java            | Java     |         27 |         33 |         10 |         70 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\geometry\Point.java         | Java     |         20 |         26 |          7 |         53 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\geometry\Quad.java          | Java     |         52 |         55 |         17 |        124 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\geometry\Triangle.java      | Java     |         20 |         19 |          8 |         47 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\resourse\ImageResource.java           | Java     |         62 |         10 |         27 |         99 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\resourse\Sprite.java                  | Java     |         27 |          0 |         11 |         38 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\resourse\SpriteMap.java               | Java     |         42 |          0 |         20 |         62 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\scenes\Scene.java                     | Java     |         42 |          0 |         12 |         54 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\scenes\SceneManager.java              | Java     |         29 |          0 |         12 |         41 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\ui\elements\Text.java                 | Java     |         31 |          6 |         15 |         52 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\ui\elements\UIButton.java             | Java     |         63 |         38 |         24 |        125 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\ui\elements\UIImage.java              | Java     |          3 |          0 |          3 |          6 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\ui\layouts\Grid.java                  | Java     |          3 |          0 |          3 |          6 |
+| d:\GitRepos\JOGL-Engine-2\src\minesweeper\Constants.java                   | Java     |         28 |          4 |          8 |         40 |
+| d:\GitRepos\JOGL-Engine-2\src\minesweeper\Game.java                        | Java     |         95 |         22 |         31 |        148 |
+| d:\GitRepos\JOGL-Engine-2\src\minesweeper\gametypes\Tile.java              | Java     |         90 |         27 |         28 |        145 |
+| d:\GitRepos\JOGL-Engine-2\src\minesweeper\scenetypes\GameScene.java        | Java     |        152 |         41 |         51 |        244 |
+| d:\GitRepos\JOGL-Engine\README.md                                          | Markdown |         -6 |          0 |         -2 |         -8 |
+| d:\GitRepos\JOGL-Engine\bin\engine\EventListener.class                     | Java     |        -17 |          0 |          0 |        -17 |
+| d:\GitRepos\JOGL-Engine\bin\engine\GameLoop.class                          | Java     |         -5 |          0 |          0 |         -5 |
+| d:\GitRepos\JOGL-Engine\bin\engine\Inputs\KeyInput.class                   | Java     |        -19 |          0 |          0 |        -19 |
+| d:\GitRepos\JOGL-Engine\bin\engine\Inputs\KeyInputCaller.class             | Java     |        -14 |          0 |          0 |        -14 |
+| d:\GitRepos\JOGL-Engine\bin\engine\Inputs\KeyInputKeys.class               | Java     |        -27 |          0 |          0 |        -27 |
+| d:\GitRepos\JOGL-Engine\bin\engine\Inputs\MouseInput.class                 | Java     |        -18 |          0 |          0 |        -18 |
+| d:\GitRepos\JOGL-Engine\bin\engine\Inputs\MouseInputCaller.class           | Java     |        -27 |          0 |          0 |        -27 |
+| d:\GitRepos\JOGL-Engine\bin\engine\Inputs\MouseInputKeys.class             | Java     |        -17 |          0 |          0 |        -17 |
+| d:\GitRepos\JOGL-Engine\bin\engine\events\EventHandler.class               | Java     |         -5 |          0 |          0 |         -5 |
+| d:\GitRepos\JOGL-Engine\bin\engine\exeptions\DrawableNotInitialized.class  | Java     |         -6 |          0 |          0 |         -6 |
+| d:\GitRepos\JOGL-Engine\bin\engine\exeptions\LayerDoesNotExist.class       | Java     |         -6 |          0 |          0 |         -6 |
+| d:\GitRepos\JOGL-Engine\bin\engine\physics2D\collisions\Area.class         | Java     |        -13 |          0 |          0 |        -13 |
+| d:\GitRepos\JOGL-Engine\bin\engine\physics2D\collisions\Collisions.class   | Java     |        -15 |          0 |          0 |        -15 |
+| d:\GitRepos\JOGL-Engine\bin\engine\rendering\Drawable.class                | Java     |         -4 |          0 |         -1 |         -5 |
+| d:\GitRepos\JOGL-Engine\bin\engine\rendering\Drawer.class                  | Java     |        -38 |          0 |          0 |        -38 |
+| d:\GitRepos\JOGL-Engine\bin\engine\rendering\Layer.class                   | Java     |        -14 |          0 |          0 |        -14 |
+| d:\GitRepos\JOGL-Engine\bin\engine\rendering\LayerKeys.class               | Java     |        -13 |          0 |          0 |        -13 |
+| d:\GitRepos\JOGL-Engine\bin\engine\rendering\Renderer.class                | Java     |        -34 |          0 |          0 |        -34 |
+| d:\GitRepos\JOGL-Engine\bin\engine\rendering\color\Color.class             | Java     |        -14 |          0 |          0 |        -14 |
+| d:\GitRepos\JOGL-Engine\bin\engine\rendering\geometry\Point.class          | Java     |        -11 |          0 |          0 |        -11 |
+| d:\GitRepos\JOGL-Engine\bin\engine\rendering\geometry\Quad.class           | Java     |        -15 |          0 |          0 |        -15 |
+| d:\GitRepos\JOGL-Engine\bin\engine\rendering\geometry\Triangle.class       | Java     |        -13 |          0 |          0 |        -13 |
+| d:\GitRepos\JOGL-Engine\bin\engine\resourse\ImageResource.class            | Java     |        -30 |          0 |          0 |        -30 |
+| d:\GitRepos\JOGL-Engine\bin\engine\resourse\Sprite.class                   | Java     |         -7 |          0 |          0 |         -7 |
+| d:\GitRepos\JOGL-Engine\bin\engine\resourse\SpriteMap.class                | Java     |        -23 |          0 |          0 |        -23 |
+| d:\GitRepos\JOGL-Engine\bin\engine\ui\elements\Button.class                | Java     |         -5 |          0 |          0 |         -5 |
+| d:\GitRepos\JOGL-Engine\bin\engine\ui\elements\Image.class                 | Java     |         -6 |          0 |          0 |         -6 |
+| d:\GitRepos\JOGL-Engine\bin\engine\ui\elements\Text.class                  | Java     |         -5 |          0 |          0 |         -5 |
+| d:\GitRepos\JOGL-Engine\bin\engine\ui\layouts\Grid.class                   | Java     |         -5 |          0 |          0 |         -5 |
+| d:\GitRepos\JOGL-Engine\bin\minesweeper\Constants$kGame.class              | Java     |        -10 |          0 |          0 |        -10 |
+| d:\GitRepos\JOGL-Engine\bin\minesweeper\Constants$kTile.class              | Java     |        -11 |          0 |          0 |        -11 |
+| d:\GitRepos\JOGL-Engine\bin\minesweeper\Constants.class                    | Java     |         -5 |          0 |          0 |         -5 |
+| d:\GitRepos\JOGL-Engine\bin\minesweeper\Game.class                         | Java     |        -27 |          0 |         -1 |        -28 |
+| d:\GitRepos\JOGL-Engine\bin\minesweeper\Main.class                         | Java     |         -9 |          0 |          0 |         -9 |
+| d:\GitRepos\JOGL-Engine\bin\minesweeper\gametypes\Tile.class               | Java     |        -30 |          0 |          0 |        -30 |
+| d:\GitRepos\JOGL-Engine\bin\minesweeper\util\GameUtils.class               | Java     |        -18 |          0 |          0 |        -18 |
+| d:\GitRepos\JOGL-Engine\src\engine\EventListener.java                      | Java     |        -44 |         -1 |        -18 |        -63 |
+| d:\GitRepos\JOGL-Engine\src\engine\GameLoop.java                           | Java     |         -7 |          0 |         -2 |         -9 |
+| d:\GitRepos\JOGL-Engine\src\engine\Inputs\KeyInput.java                    | Java     |        -32 |          0 |        -13 |        -45 |
+| d:\GitRepos\JOGL-Engine\src\engine\Inputs\KeyInputCaller.java              | Java     |        -13 |         -1 |         -6 |        -20 |
+| d:\GitRepos\JOGL-Engine\src\engine\Inputs\KeyInputKeys.java                | Java     |        -48 |         -1 |        -10 |        -59 |
+| d:\GitRepos\JOGL-Engine\src\engine\Inputs\MouseInput.java                  | Java     |        -31 |          0 |        -13 |        -44 |
+| d:\GitRepos\JOGL-Engine\src\engine\Inputs\MouseInputCaller.java            | Java     |        -37 |          0 |        -12 |        -49 |
+| d:\GitRepos\JOGL-Engine\src\engine\Inputs\MouseInputKeys.java              | Java     |        -11 |          0 |         -2 |        -13 |
+| d:\GitRepos\JOGL-Engine\src\engine\events\EventHandler.java                | Java     |         -8 |          0 |         -3 |        -11 |
+| d:\GitRepos\JOGL-Engine\src\engine\exeptions\DrawableNotInitialized.java   | Java     |         -6 |          0 |         -2 |         -8 |
+| d:\GitRepos\JOGL-Engine\src\engine\exeptions\LayerDoesNotExist.java        | Java     |         -6 |          0 |         -2 |         -8 |
+| d:\GitRepos\JOGL-Engine\src\engine\physics2D\collisions\Area.java          | Java     |        -46 |          0 |         -6 |        -52 |
+| d:\GitRepos\JOGL-Engine\src\engine\physics2D\collisions\Collisions.java    | Java     |        -18 |          0 |         -5 |        -23 |
+| d:\GitRepos\JOGL-Engine\src\engine\rendering\Drawable.java                 | Java     |         -8 |         -3 |         -5 |        -16 |
+| d:\GitRepos\JOGL-Engine\src\engine\rendering\Drawer.java                   | Java     |        -72 |         -4 |        -37 |       -113 |
+| d:\GitRepos\JOGL-Engine\src\engine\rendering\Layer.java                    | Java     |        -26 |         -4 |        -11 |        -41 |
+| d:\GitRepos\JOGL-Engine\src\engine\rendering\LayerKeys.java                | Java     |         -8 |          0 |         -2 |        -10 |
+| d:\GitRepos\JOGL-Engine\src\engine\rendering\Renderer.java                 | Java     |        -34 |          0 |        -13 |        -47 |
+| d:\GitRepos\JOGL-Engine\src\engine\rendering\color\Color.java              | Java     |        -27 |          0 |         -8 |        -35 |
+| d:\GitRepos\JOGL-Engine\src\engine\rendering\geometry\Point.java           | Java     |        -12 |          0 |         -4 |        -16 |
+| d:\GitRepos\JOGL-Engine\src\engine\rendering\geometry\Quad.java            | Java     |        -52 |          0 |        -13 |        -65 |
+| d:\GitRepos\JOGL-Engine\src\engine\rendering\geometry\Triangle.java        | Java     |        -25 |         -4 |        -15 |        -44 |
+| d:\GitRepos\JOGL-Engine\src\engine\resourse\ImageResource.java             | Java     |        -54 |         -9 |        -22 |        -85 |
+| d:\GitRepos\JOGL-Engine\src\engine\resourse\Sprite.java                    | Java     |        -16 |          0 |         -8 |        -24 |
+| d:\GitRepos\JOGL-Engine\src\engine\resourse\SpriteMap.java                 | Java     |        -35 |          0 |        -19 |        -54 |
+| d:\GitRepos\JOGL-Engine\src\engine\ui\elements\Button.java                 | Java     |         -3 |          0 |         -3 |         -6 |
+| d:\GitRepos\JOGL-Engine\src\engine\ui\elements\Image.java                  | Java     |         -3 |          0 |         -3 |         -6 |
+| d:\GitRepos\JOGL-Engine\src\engine\ui\elements\Text.java                   | Java     |         -3 |          0 |         -3 |         -6 |
+| d:\GitRepos\JOGL-Engine\src\engine\ui\layouts\Grid.java                    | Java     |         -3 |          0 |         -3 |         -6 |
+| d:\GitRepos\JOGL-Engine\src\minesweeper\Constants.java                     | Java     |        -17 |          0 |         -7 |        -24 |
+| d:\GitRepos\JOGL-Engine\src\minesweeper\Game.java                          | Java     |        -70 |         -2 |        -33 |       -105 |
+| d:\GitRepos\JOGL-Engine\src\minesweeper\Main.java                          | Java     |         -9 |          0 |         -5 |        -14 |
+| d:\GitRepos\JOGL-Engine\src\minesweeper\gametypes\Tile.java                | Java     |        -96 |         -8 |        -21 |       -125 |
+| d:\GitRepos\JOGL-Engine\src\minesweeper\util\GameUtils.java                | Java     |        -17 |          0 |        -10 |        -27 |
+| Total                                                                      |          |         12 |        719 |        209 |        940 |
++----------------------------------------------------------------------------+----------+------------+------------+------------+------------+

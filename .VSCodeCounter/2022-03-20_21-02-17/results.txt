@@ -1,0 +1,83 @@
+Date : 2022-03-20 21:02:17
+Directory : d:\GitRepos\JOGL-Engine-2
+Total : 40 files,  1451 codes, 756 comments, 552 blanks, all 2759 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Java     |         39 |      1,445 |        756 |        550 |      2,751 |
+| Markdown |          1 |          6 |          0 |          2 |          8 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                       | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                          |         40 |      1,451 |        756 |        552 |      2,759 |
+| src                                                                        |         39 |      1,445 |        756 |        550 |      2,751 |
+| src\engine                                                                 |         35 |      1,080 |        662 |        432 |      2,174 |
+| src\engine\Inputs                                                          |          6 |        169 |         92 |         61 |        322 |
+| src\engine\components                                                      |          4 |        175 |        151 |         64 |        390 |
+| src\engine\exeptions                                                       |          2 |         12 |          0 |          4 |         16 |
+| src\engine\physics2D                                                       |          3 |         73 |         67 |         17 |        157 |
+| src\engine\physics2D\collisions                                            |          3 |         73 |         67 |         17 |        157 |
+| src\engine\rendering                                                       |          9 |        300 |        296 |        136 |        732 |
+| src\engine\rendering\color                                                 |          1 |         27 |         33 |         10 |         70 |
+| src\engine\rendering\geometry                                              |          3 |         92 |        100 |         32 |        224 |
+| src\engine\resourse                                                        |          3 |        131 |         10 |         58 |        199 |
+| src\engine\scenes                                                          |          2 |         71 |          0 |         24 |         95 |
+| src\engine\ui                                                              |          4 |        100 |         44 |         45 |        189 |
+| src\engine\ui\elements                                                     |          3 |         97 |         44 |         42 |        183 |
+| src\engine\ui\layouts                                                      |          1 |          3 |          0 |          3 |          6 |
+| src\minesweeper                                                            |          4 |        365 |         94 |        118 |        577 |
+| src\minesweeper\gametypes                                                  |          1 |         90 |         27 |         28 |        145 |
+| src\minesweeper\scenetypes                                                 |          1 |        152 |         41 |         51 |        244 |
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                   | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| d:\GitRepos\JOGL-Engine-2\README.md                                        | Markdown |          6 |          0 |          2 |          8 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\EventListener.java                    | Java     |         42 |          2 |         21 |         65 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\GameLoop.java                         | Java     |          7 |          0 |          2 |          9 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\KeyInput.java                  | Java     |         30 |         25 |         16 |         71 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\KeyInputCaller.java            | Java     |         13 |          6 |          6 |         25 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\KeyInputKeys.java              | Java     |         47 |         13 |         11 |         71 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\MouseInput.java                | Java     |         31 |         24 |         13 |         68 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\MouseInputCaller.java          | Java     |         37 |         24 |         13 |         74 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\Inputs\MouseInputKeys.java            | Java     |         11 |          0 |          2 |         13 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\components\Event.java                 | Java     |         21 |         24 |          7 |         52 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\components\GameObject.java            | Java     |          8 |         17 |          8 |         33 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\components\Image.java                 | Java     |         64 |         64 |         24 |        152 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\components\Transform.java             | Java     |         82 |         46 |         25 |        153 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\exeptions\DrawableNotInitialized.java | Java     |          6 |          0 |          2 |          8 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\exeptions\LayerDoesNotExist.java      | Java     |          6 |          0 |          2 |          8 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\physics2D\collisions\Area.java        | Java     |         46 |         35 |          9 |         90 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\physics2D\collisions\Collisions.java  | Java     |         18 |         25 |          5 |         48 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\physics2D\collisions\Vector2.java     | Java     |          9 |          7 |          3 |         19 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\Drawable.java               | Java     |         10 |         46 |         10 |         66 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\Drawer.java                 | Java     |         79 |         69 |         51 |        199 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\Layer.java                  | Java     |         39 |         33 |         15 |         87 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\LayerKeys.java              | Java     |          8 |          0 |          2 |         10 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\Renderer.java               | Java     |         45 |         15 |         16 |         76 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\color\Color.java            | Java     |         27 |         33 |         10 |         70 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\geometry\Point.java         | Java     |         20 |         26 |          7 |         53 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\geometry\Quad.java          | Java     |         52 |         55 |         17 |        124 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\rendering\geometry\Triangle.java      | Java     |         20 |         19 |          8 |         47 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\resourse\ImageResource.java           | Java     |         62 |         10 |         27 |         99 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\resourse\Sprite.java                  | Java     |         27 |          0 |         11 |         38 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\resourse\SpriteMap.java               | Java     |         42 |          0 |         20 |         62 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\scenes\Scene.java                     | Java     |         42 |          0 |         12 |         54 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\scenes\SceneManager.java              | Java     |         29 |          0 |         12 |         41 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\ui\elements\Text.java                 | Java     |         31 |          6 |         15 |         52 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\ui\elements\UIButton.java             | Java     |         63 |         38 |         24 |        125 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\ui\elements\UIImage.java              | Java     |          3 |          0 |          3 |          6 |
+| d:\GitRepos\JOGL-Engine-2\src\engine\ui\layouts\Grid.java                  | Java     |          3 |          0 |          3 |          6 |
+| d:\GitRepos\JOGL-Engine-2\src\minesweeper\Constants.java                   | Java     |         28 |          4 |          8 |         40 |
+| d:\GitRepos\JOGL-Engine-2\src\minesweeper\Game.java                        | Java     |         95 |         22 |         31 |        148 |
+| d:\GitRepos\JOGL-Engine-2\src\minesweeper\gametypes\Tile.java              | Java     |         90 |         27 |         28 |        145 |
+| d:\GitRepos\JOGL-Engine-2\src\minesweeper\scenetypes\GameScene.java        | Java     |        152 |         41 |         51 |        244 |
+| Total                                                                      |          |      1,451 |        756 |        552 |      2,759 |
++----------------------------------------------------------------------------+----------+------------+------------+------------+------------+

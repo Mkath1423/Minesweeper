@@ -29,14 +29,15 @@ public enum KeyInputKeys{
     W(0x57),
     X(0x58),
     Y(0x59),
-    Z(0x5a)
-    ;
+    Z(0x5a);
+
     private final int keyCode;
 
 
     // CREDIT: https://stackoverflow.com/questions/1080904/how-can-i-lookup-a-java-enum-from-its-string-value
     private static final Map<Integer, KeyInputKeys> lookup = new HashMap<Integer, KeyInputKeys>();
 
+    // static initializer for the lookup map
     static {
         for (KeyInputKeys k : KeyInputKeys.values()) {
             lookup.put(k.getKeyCode(), k);
@@ -47,10 +48,22 @@ public enum KeyInputKeys{
         this.keyCode = code;
     }
 
+    /**
+     * Gets the keyCode int from an enum value
+     * 
+     * @return the keycode number
+     */
     public int getKeyCode() {
         return keyCode;
     }
 
+    /**
+     * Returns the enum value with the specified keyCode
+     * 
+     * @param keyCode the keyCode value to get from
+     * 
+     * @return the KeyInputKeys enum value
+     */
     public static KeyInputKeys get(int keyCode){
         return lookup.get(keyCode);
     }

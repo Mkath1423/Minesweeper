@@ -1,4 +1,4 @@
-package engine.resourse;
+package engine.resource;
 
 import java.net.URL;
 

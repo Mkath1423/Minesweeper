@@ -1,5 +1,12 @@
 package engine.components;
 
+/** 
+ * An object that can be added to the scenes
+ * 
+ * Contains components that add extra functionality 
+ * 
+ * @author Lex Stapleton
+*/
 public abstract class GameObject {
     
     public boolean isActive = false;

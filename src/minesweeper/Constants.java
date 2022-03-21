@@ -1,17 +1,12 @@
 package minesweeper;
 
-import engine.rendering.color.Color;
-
 public final class Constants {
     public static final class kTile{
 
-        public static float boarderPercent = 0.7f;
-
-        public static Color boarderColor = new Color(0.3f, 0.3f, 0.3f, 1f);
-        public static Color innerColor   = new Color(0.7f, 0.7f, 0.7f, 1f);
-
+        // tile size
         public static float length = 15;
 
+        // Indices for sprites in the sprite map
         public static int UNCHECKED = 0;
         public static int EMPTY = 1;
         public static int FLAGGED = 2;
@@ -32,9 +27,11 @@ public final class Constants {
     }
 
     public static final class kGame{
+        // size of bomb grid
         public static int xSize = 10;
         public static int ySize = 15;
 
+        // Percentage of tiles that are bombs
         public static final double easyBombsAmount = 0.1;
         public static final double mediumBombsAmount = 0.2;
         public static final double hardBombsAmount = 0.3;

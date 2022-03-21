@@ -4,8 +4,10 @@ import engine.components.GameObject;
 import engine.components.Transform;
 import engine.rendering.Drawable;
 import engine.rendering.geometry.Quad;
-import engine.resourse.Sprite;
-import engine.resourse.SpriteMap;
+import engine.resource.Sprite;
+import engine.resource.SpriteMap;
+
+// TODO: make this into something
 
 public class Text extends GameObject implements Drawable{
 
@@ -15,6 +17,7 @@ public class Text extends GameObject implements Drawable{
 
     public SpriteMap font;
 
+    // !! IMPORTANT !! IGNORE THIS FILE !!
     public Text(Transform transform, SpriteMap font, String text){
         this.transform = transform;
         this.font      = font;
@@ -23,12 +26,6 @@ public class Text extends GameObject implements Drawable{
 
     @Override
     public void init() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void dispose() {
         // TODO Auto-generated method stub
         
     }

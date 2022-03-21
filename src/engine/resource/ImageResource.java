@@ -1,4 +1,4 @@
-package engine.resourse;
+package engine.resource;
 
 import javax.imageio.ImageIO;
 
@@ -16,15 +16,33 @@ import engine.rendering.Renderer;
 public class ImageResource  {
     private static Map<URL, SpriteMap> textures = new HashMap<URL, SpriteMap>();
 
+    /**
+     * Generates an absolute path to a specified file
+     * 
+     * @param path the path to the image relative to /resource 
+     * @return the url to that path
+     */
     private static URL generateURl(String path){
         // generate the relative path
         return ImageResource.class.getResource(path); // TODO: change the url building 
     }
 
+    /**
+     * Loads the image file
+     * 
+     * Loads the image file into a texture object
+     * 
+     * Generates a SpriteMap and stores in the textures map
+     * 
+     * SpriteMap will have 1 sprite in it
+     * 
+     * @param path the path to the image relative to /resource 
+     */
     public static void loadImage(String path){
         URL url = generateURl(path);
 
         BufferedImage image;
+
         // load the image from the file
         try {
             image = ImageIO.read(url); 
@@ -43,6 +61,19 @@ public class ImageResource  {
         System.out.println("loaded texture " + url.toString() );
     }
 
+    /**
+     * Loads the image file
+     * 
+     * Loads the image file into a texture object
+     * 
+     * Generates a SpriteMap and stores in the textures map
+     * 
+     * SpriteMap will have cellsWide*cellsTall sprites in it
+     * 
+     * @param path the path to the image relative to /resource 
+     * @param cellsWide the number of cells in the x direction
+     * @param cellsTall the number of cells in the y direction
+     */
     public static void loadImage(String path, float cellsWide, float cellsTall){
         URL url = generateURl(path);
 
@@ -63,6 +94,12 @@ public class ImageResource  {
         }
     }
 
+    /**
+     * Gets and return the SpriteMap for a URL
+     * 
+     * @param path the path to the image relative to /resource 
+     * @return the SpriteMap object
+     */
     public static SpriteMap getSpriteMap(String path){
         URL url = generateURl(path);
         

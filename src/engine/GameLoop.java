@@ -1,8 +1,28 @@
 package engine;
 
 public interface GameLoop {
-    public void init();
-    public void update(double time);
-    public void dispose();
+
+    /**
+     * Load sprites into the ImageResource
+     * 
+     * Always called before init
+     */
     public void loadTextures();
+
+    /**
+     * Initialize scenes and game objects 
+     */
+    public void init();
+
+    /**
+     * Called every frame 
+     * 
+     * @param time the time between this frame and the last
+     */
+    public void update(double time);
+
+    /**
+     * Called when the window closes
+     */
+    public void dispose();
 }

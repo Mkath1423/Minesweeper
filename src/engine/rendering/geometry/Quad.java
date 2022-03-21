@@ -12,6 +12,8 @@ package engine.rendering.geometry;
  *  toString -> generates a string representation of the quad
  */
 public class Quad {
+
+    // vertices of the quad
     public Point left_top;
     public Point right_top;
     public Point left_bottom;
@@ -108,6 +110,11 @@ public class Quad {
         return String.format("Quad(lt:%s, lb:%s, rb:%s, rt:%s)", left_top.toString(), left_bottom.toString(), right_bottom.toString(), right_top.toString());
     }
 
+     /**
+     * Checks if a quad is equal to this
+     * 
+     * @return true if the vertexes are the same
+     */
     @Override
     public boolean equals(Object o){
         if(o == null || o.getClass() != this.getClass()) return false;

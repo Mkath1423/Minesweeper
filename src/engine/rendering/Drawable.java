@@ -3,7 +3,7 @@ package engine.rendering;
 import com.jogamp.opengl.GL2;
 
 import engine.rendering.geometry.Quad;
-import engine.resourse.Sprite;
+import engine.resource.Sprite;
 
 public interface Drawable {
     
@@ -33,9 +33,24 @@ public interface Drawable {
      * Called when the window is disposed 
      * 
      */
-    public void dispose();
+    //public void dispose();
 
+    /**
+     * Getter for the drawable's sprite
+     * 
+     * Used for sorting drawables by texture
+     * 
+     * @return the Sprite object containing texture coordinates and the texture
+     */
     public Sprite GetSprite();
+
+    /**
+     * Getter for the drawable's quad
+     * 
+     * Used for sorting drawables by texture
+     * 
+     * @return the quad to be rendered
+     */
     public Quad GetQuad();
 
     /**

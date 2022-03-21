@@ -9,6 +9,8 @@ package engine.rendering.geometry;
  *  ToString -> Turns the point into a string
  */
 public class Point {
+
+    // 2d position of the point
     public float x;
     public float y;
 
@@ -34,6 +36,11 @@ public class Point {
         return String.format("(%s, %s)", x, y);
     }
 
+    /**
+     * Checks if a point is equal to this
+     * 
+     * @return true if the x and y are the same
+     */
     @Override
     public boolean equals(Object o){
         if(o == null || o.getClass() != this.getClass()) return false;

@@ -11,6 +11,7 @@ import com.jogamp.newt.event.KeyEvent;
 public class KeyInput{
     private static Map<KeyInputKeys, List<Consumer<KeyEvent>>> listeners;
 
+    // Static initializer for the listeners map
     static {
         listeners = new EnumMap<KeyInputKeys, List<Consumer<KeyEvent>>>(KeyInputKeys.class);
 
@@ -39,9 +40,13 @@ public class KeyInput{
 
     
     /** 
+     * Add a listener to the listeners.
+     * 
+     * Append a lambda to listeners, gets called when the event is raised.
+     * 
      * @param key the KeyEvent this callback is associated with
      * @param consumer a KeyEvent Consumer that will get invoked when an event is triggered
-     * @return int the index in the listener list
+     * @return int the index in the listener list TODO: this return won't work
      */
     public static int register(KeyInputKeys key, Consumer<KeyEvent> consumer){
         listeners.get(key).add(consumer);
@@ -50,8 +55,10 @@ public class KeyInput{
 
     
     /** 
+     * Removes the listener from the list of callbacks
+     * 
      * @param key the KeyEvent this callback is associated with
-     * @param index a KeyEvent Consumer that will get invoked when an event is triggered
+     * @param index the index of the callback
      */
     public static void unregister(KeyInputKeys key, int index){
         // TODO: this doesn't work
