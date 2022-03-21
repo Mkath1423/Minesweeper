@@ -187,14 +187,4 @@ public class Drawer{
         gl.glBindTexture(GL2.GL_TEXTURE_2D, 0);
         gl.glFlush();
     }
-
-    
-  
-
-
-
-
-
-
-
 }
